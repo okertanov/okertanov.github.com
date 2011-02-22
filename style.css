@@ -1,0 +1,36 @@
+html 
+{
+        height: 100%;
+}
+
+body 
+{
+    font-family: Tahoma, Helvetica;
+    background: #ffffff; /* for non-css3 browsers */
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#cccccc'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#cccccc)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #ffffff,  #cccccc); /* for firefox 3.6+ */
+}
+
+.gdroid-huge
+{
+    font-size: 7em;
+    font-family: 'Droid Sans', Tahoma, serif;
+}
+
+.margin-huge
+{
+    margin: 15% 1%;
+}
+
+.gdroid-small
+{
+    font-size: 0.8em;
+    font-family: 'Droid Sans', Tahoma, serif;
+}
+
+.center
+{
+    text-align: center;
+}
+

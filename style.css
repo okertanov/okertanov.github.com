@@ -16,6 +16,14 @@ body
 {
     font-size: 7em;
     font-family: 'Droid Sans', Tahoma, serif;
+    text-transform:lowercase;
+    text-shadow: 0 0 24px #1CBE74,
+                 0 0 8px  #1CBE74,
+                 0 0 8px  #1CBE74,
+                 0 0 4px  #1CBE74,
+                 0 0 4px  #1CBE74,
+                 0 0 4px  #1CBE74,
+                 0 0 4px  #1CBE74 !important;
 }
 
 .margin-huge
@@ -27,6 +35,7 @@ body
 {
     font-size: 0.8em;
     font-family: 'Droid Sans', Tahoma, serif;
+    text-shadow: 0 1px 0 gray;
 }
 
 .center

@@ -9,7 +9,7 @@ pygments: true
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 #
-title : 'My githubbish blog'
+title : 'githubbish blog'
 tagline: 'In theory, there is no difference between theory and practice. But, in practice, there is.'
 author :
   name : 'Oleg Kertanov'

@@ -1,8 +1,9 @@
 
 ## github-style web page for <https://github.com/okertanov>
 
-## Based on Jekyll-Bootstrap <http://jekyllbootstrap.com>
-0.2.9 - stable and versioned using [semantic versioning](http://semver.org/).
+### [okertanov.github.com](http://okertanov.github.com/)
+
+## Based on Jekyll-Bootstrap v.0.2.9 <http://jekyllbootstrap.com>
 
 ## License
 [Creative Commons](http://creativecommons.org/licenses/by-nc-sa/3.0/)

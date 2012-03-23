@@ -3,7 +3,6 @@ layout: post
 title : Hown to generate a directory index for the images preview like a true vimmer.
 category : vim
 tags : [vim, index, regexp]
-published: false
 ---
 {% include JB/setup %}
 

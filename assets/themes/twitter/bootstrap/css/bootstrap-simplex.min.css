@@ -2486,7 +2486,7 @@ input[type="submit"].btn.btn-mini {
 .nav .nav-header {
   display: block;
   padding: 3px 15px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: bold;
   line-height: 18px;
   color: #999999;
@@ -3000,7 +3000,7 @@ input[type="submit"].btn.btn-mini {
 }
 .navbar .nav > li > a {
   float: none;
-  padding: 10px 10px 11px;
+  padding: 10px 10px 12px;
   line-height: 19px;
   color: #555555;
   text-decoration: none;
@@ -4007,7 +4007,7 @@ h6,
   padding-top: 14px;
   text-shadow: none;
   font-weight: normal;
-  font-size: 11px;
+  font-size: 12px;
 }
 .navbar .nav > li > a:hover {
   text-decoration: underline;
@@ -4040,7 +4040,7 @@ div.subnav .nav > li > a {
   padding-top: 12px;
   color: #555555;
   font-weight: normal;
-  font-size: 11px;
+  font-size: 12px;
 }
 div.subnav .nav > li > a:hover {
   text-decoration: underline;
@@ -4049,7 +4049,7 @@ div.subnav .nav > li > a:hover {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  font-size: 11px;
+  font-size: 12px;
 }
 .nav .nav-header {
   font-weight: normal;
@@ -4072,7 +4072,7 @@ div.subnav .nav > li > a:hover {
   }
 }
 .nav > li > a {
-  font-size: 11px;
+  font-size: 12px;
   border-width: 1px;
 }
 .nav-tabs > li > a,

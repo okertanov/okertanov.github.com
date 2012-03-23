@@ -5,6 +5,13 @@ tagline: about:montblanc
 ---
 {% include JB/setup %}
 
+## Recent posts
+<ul class="posts">
+  {% for post in site.posts %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
+
 ## My github projects you may pay attention to
 * Gitra-VCF - version control frontend [Gitra-VCF](http://github.com/okertanov/Gitra-VCF)
 * The Embedded OS mainly focused on STM32 CortexM4 [VelaOS](http://github.com/okertanov/VelaOS)
@@ -50,12 +57,4 @@ My Curriculum Vitae: [cv-okertanov.md](https://github.com/okertanov/functional/b
     Skype:   olegkertanov
     twitter: @okertanov
     PGP kId: 0xFB644A1C
-
-
-## Posts
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
 

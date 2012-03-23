@@ -6,16 +6,14 @@ tagline: about:montblanc
 {% include JB/setup %}
 
 ## My github projects you may pay attention to
-| Name                                                | Path                                                            |
-|-----------------------------------------------------|-----------------------------------------------------------------|
-| Gitra-VCF - version control frontend                | [Gitra-VCF](http://github.com/okertanov/Gitra-VCF)              |
-| The Embedded OS mainly focused on STM32 CortexM4    | [VelaOS](http://github.com/okertanov/VelaOS)                    |
-| Functional samples & code snippets                  | [functional](http://github.com/okertanov/functional)            |
-| PKS Formatik                                        | [Formatik](http://github.com/okertanov/Formatik)                |
-| Airtunes emulator fork                              | [shairport](http://github.com/okertanov/shairport)              |
-| Plain old Web 1.0 Market script primer              | [Market-Web1.0](http://github.com/okertanov/Market-Web1.0)      |
-| V8 JavaScript shell primer                          | [Embed-GoogleV8](http://github.com/okertanov/Embed-GoogleV8)    |
-| My dotfiles collection                              | [dotfiles](http://github.com/okertanov/dotfiles)                |
+* Gitra-VCF - version control frontend [Gitra-VCF](http://github.com/okertanov/Gitra-VCF)
+* The Embedded OS mainly focused on STM32 CortexM4 [VelaOS](http://github.com/okertanov/VelaOS)
+* Functional samples & code snippets [functional](http://github.com/okertanov/functional)
+* PKS Formatik [Formatik](http://github.com/okertanov/Formatik)
+* Airtunes emulator fork [shairport](http://github.com/okertanov/shairport)
+* Plain old Web 1.0 Market script primer [Market-Web1.0](http://github.com/okertanov/Market-Web1.0)
+* V8 JavaScript shell primer [Embed-GoogleV8](http://github.com/okertanov/Embed-GoogleV8)
+* My dotfiles collection [dotfiles](http://github.com/okertanov/dotfiles)
 
 ## My other sites & public projects
 * Twitter:   [@okertanov](https://twitter.com/okertanov)

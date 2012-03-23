@@ -1,15 +1,15 @@
 ## Changelog
 
-Public releases are all root nodes.  
+Public releases are all root nodes.
 Incremental version bumps that were not released publicly are nested where appropriate.
 
 P.S. If there is a standard (popular) changelog format, please let me know.
 
-- **0.2.9 : 2012.03.01**   
+- **0.2.9 : 2012.03.01**
     - **Bug Fixes**
     - 0.2.9 : @alishutc Fixes the error on post creation if date was not specified.
 
-- **0.2.8 : 2012.03.01**   
+- **0.2.8 : 2012.03.01**
     - **Features**
     - 0.2.8 : @metalelf0 Added option to specify a custom date when creating post.
     - 0.2.7 : @daz Updates twitter theme framework to use 2.x while still maintaining core layout. #50
@@ -23,7 +23,7 @@ P.S. If there is a standard (popular) changelog format, please let me know.
     - 0.2.2 : @sstar Resolved an issue preventing disabling comments for individual pages #44
     - 0.2.1 : Resolve incorrect HOME\_PATH/BASE\_PATH settings
 
-- **0.2.0 : 2012.02.01**   
+- **0.2.0 : 2012.02.01**
   Features
     - Add Theme Packages v 0.1.0
       All themes should be tracked and maintained outside of JB core.
@@ -34,17 +34,17 @@ P.S. If there is a standard (popular) changelog format, please let me know.
     - 0.1.2 : @jamesFleeting adds facebook comments support
     - 0.1.1 : @SegFaultAX adds tagline as site-wide configuration
 
-- **0.1.0 : 2012.01.24**   
-  First major versioned release.   
-  Features   
+- **0.1.0 : 2012.01.24**
+  First major versioned release.
+  Features
     - Standardize Public API
     - Use name-spacing and modulation where possible.
     - Ability to override public methods with custom code.
     - Publish the theme API.
     - Ship with comments, analytics integration.
-  
-- **0.0.1 : 2011.12.30**    
+
+- **0.0.1 : 2011.12.30**
   First public release, lots of updates =p
   Thank you everybody for dealing with the fast changes and helping
   me work out the API to a manageable state.
-  
+

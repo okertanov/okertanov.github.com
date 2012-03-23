@@ -1,6 +1,7 @@
 ---
 layout: post
 title : Hown to generate a directory index for the images preview like a true vimmer.
+tagline:
 category : vim
 tags : [vim, index, regexp]
 ---

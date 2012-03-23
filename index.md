@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Static::Index
+title: Index
 tagline: about:montblanc
 ---
 {% include JB/setup %}
@@ -19,7 +19,7 @@ tagline: about:montblanc
 * Twitter:   [@okertanov](https://twitter.com/okertanov)
 * Facebook:  [facebook.com/okertanov](https://www.facebook.com/okertanov)
 * Linkedin:  [linkedin.com/in/okertanov](http://www.linkedin.com/in/okertanov)
-* Posterous: [okertanov.posterous.com](http://okertanov.posterous.com/) or [bitly.com/majaslapa](https://bitly.com/majaslapa/)
+* Posterous: [okertanov.posterous.com](http://okertanov.posterous.com/) or [bitly.com/majaslapa](https://bitly.com/majaslapa)
 * Tumblr:    [okertanov.tumblr.com](http://okertanov.tumblr.com/) or [nineoneone.co.vu](http://nineoneone.co.vu/)
 * LJ:        [etaceti.livejournal.com](http://etaceti.livejournal.com/)
 * Google+    [plus.google.com](https://plus.google.com/115743695860024529123)
@@ -38,7 +38,7 @@ tagline: about:montblanc
 * Quotes collection: [moya.zirochka](http://moya.zirochka.com/)
 
 ## CV
-My Curriculum Vitae: [bit.ly/okertanovcv](http://bit.ly/okertanovcv)
+My Curriculum Vitae: [cv-okertanov.md](https://github.com/okertanov/functional/blob/master/text/cv/cv-okertanov.md#readme) or [bit.ly/okertanovcv](http://bit.ly/okertanovcv)
 
 ## Contacts
     Oleg E Kertanov

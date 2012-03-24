@@ -34,6 +34,9 @@ tagline: about:montblanc
 * Picasa:    [picasaweb.google.com/okertanov](https://picasaweb.google.com/okertanov)
 * Google Reader: [google.com/reader/shared/okertanov](http://www.google.com/reader/shared/okertanov)
 
+* GitHub:    [github.com/okertanov](https://github.com/okertanov)
+* CoderWall: [coderwall.com/okertanov](http://coderwall.com/okertanov)
+
 * dou.ua: [dou.ua/users/okertanov](http://dou.ua/users/okertanov/)
 * Vimbits: [vimbits.com/users/342](http://vimbits.com/users/342)
 * Juick: [juick.com/okertanov](http://juick.com/okertanov/)

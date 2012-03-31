@@ -71,6 +71,7 @@ Zones, ZFS, DTrace and KVM — into a single operating system,
 providing an arbitrarily observable, highly multi-tenant environment built on a reliable,
 enterprise-grade storage stack. SmartOS powers SmartDataCenter, Joyent’s commercial cloud.
 
+
 Other
 -----
 
@@ -85,4 +86,14 @@ Other
 ### MilaX
 
 ### StormOS
+
+
+Supported platforms
+-------------------
+* SPARC
+* IA-32
+* x86-64
+* PowerPC
+* z/VM
+* ARM
 

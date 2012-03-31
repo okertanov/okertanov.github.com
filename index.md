@@ -22,7 +22,10 @@ tagline: about:montblanc
 * V8 JavaScript shell primer [Embed-GoogleV8](http://github.com/okertanov/Embed-GoogleV8)
 * My dotfiles collection [dotfiles](http://github.com/okertanov/dotfiles)
 
-## My other sites & public projects
+## CV
+Curriculum Vitae: [cv-okertanov.md](https://github.com/okertanov/functional/blob/master/text/cv/cv-okertanov.md#readme) or [bit.ly/okertanovcv](http://bit.ly/okertanovcv)
+
+## Other sites & public projects
 * Twitter:   [@okertanov](https://twitter.com/okertanov)
 * Facebook:  [facebook.com/okertanov](https://www.facebook.com/okertanov)
 * Linkedin:  [linkedin.com/in/okertanov](http://www.linkedin.com/in/okertanov)
@@ -46,9 +49,6 @@ tagline: about:montblanc
 
 * Microblogging button for Picasa: [tvivo](http://tvivo.espectrale.com/)
 * Quotes collection: [moya.zirochka](http://moya.zirochka.com/)
-
-## CV
-My Curriculum Vitae: [cv-okertanov.md](https://github.com/okertanov/functional/blob/master/text/cv/cv-okertanov.md#readme) or [bit.ly/okertanovcv](http://bit.ly/okertanovcv)
 
 ## Contacts
     Oleg E Kertanov

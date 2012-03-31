@@ -29,6 +29,7 @@ Curriculum Vitae: [cv-okertanov.md](https://github.com/okertanov/functional/blob
 * Twitter:   [@okertanov](https://twitter.com/okertanov)
 * Facebook:  [facebook.com/okertanov](https://www.facebook.com/okertanov)
 * Linkedin:  [linkedin.com/in/okertanov](http://www.linkedin.com/in/okertanov)
+* AngelList: [angel.co/okertanov](http://angel.co/okertanov)
 * Posterous: [okertanov.posterous.com](http://okertanov.posterous.com/) or [bitly.com/majaslapa](https://bitly.com/majaslapa)
 * Tumblr:    [okertanov.tumblr.com](http://okertanov.tumblr.com/) or [nineoneone.co.vu](http://nineoneone.co.vu/)
 * LJ:        [etaceti.livejournal.com](http://etaceti.livejournal.com/)

@@ -1184,6 +1184,7 @@ legend + .control-group {
   padding-left: 160px;
 }
 table {
+  width: 100%;
   max-width: 100%;
   border-collapse: collapse;
   border-spacing: 0;

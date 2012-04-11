@@ -4139,9 +4139,6 @@ select,
   -moz-border-radius: 0;
   border-radius: 0;
 }
-.table th {
-  font-weight: normal;
-}
 .btn {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;

@@ -1,0 +1,110 @@
+/*
+    Created by htmlize-1.39 in css mode.
+*/
+body {
+color: #000000;
+background-color: #ffffff;
+}
+.comment {
+/* font-lock-comment-face */
+color: #b22222;
+}
+.comment-delimiter {
+/* font-lock-comment-delimiter-face */
+color: #b22222;
+}
+.function-name {
+/* font-lock-function-name-face */
+color: #0000ff;
+}
+.keyword {
+/* font-lock-keyword-face */
+color: #a020f0;
+}
+.rainbow-delimiters-depth-1 {
+/* rainbow-delimiters-depth-1-face */
+color: #8c8c8c;
+}
+.rainbow-delimiters-depth-2 {
+/* rainbow-delimiters-depth-2-face */
+color: #93a8c6;
+}
+.rainbow-delimiters-depth-3 {
+/* rainbow-delimiters-depth-3-face */
+color: #b0b1a3;
+}
+.rainbow-delimiters-depth-4 {
+/* rainbow-delimiters-depth-4-face */
+color: #97b098;
+}
+.rainbow-delimiters-depth-5 {
+/* rainbow-delimiters-depth-5-face */
+color: #aebed8;
+}
+.rainbow-delimiters-depth-6 {
+/* rainbow-delimiters-depth-6-face */
+color: #b0b0b3;
+}
+.rainbow-delimiters-depth-7 {
+/* rainbow-delimiters-depth-7-face */
+color: #90a890;
+}
+.rainbow-delimiters-depth-8 {
+/* rainbow-delimiters-depth-8-face */
+color: #a2b6da;
+}
+.rainbow-delimiters-depth-9 {
+/* rainbow-delimiters-depth-9-face */
+color: #9cb6ad;
+}
+.string {
+/* font-lock-string-face */
+color: #8b2252;
+}
+
+a {
+color: inherit;
+background-color: inherit;
+font: inherit;
+text-decoration: inherit;
+}
+a:hover {
+text-decoration: underline;
+}
+
+.obscured
+{
+    display: inline-block;
+    width: 100%;
+    background: #fafafa;
+}
+
+.obscured .obscure.yes
+{
+    zoom: 1;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=15)";
+    filter: alpha(opacity=15);
+    -moz-opacity:   0.15;
+    -khtml-opacity: 0.15;
+    opacity:        0.15;
+}
+
+.obscured .obscure.no
+{
+    zoom: 1;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -moz-opacity:   1;
+    -khtml-opacity: 1;
+    opacity:        1;
+}
+
+.descr-i
+{
+    cursor: pointer;
+}
+
+.highlight
+{
+    background: #ffff00;
+}

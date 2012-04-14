@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- Created by htmlize-1.39 in css mode. -->
+<html lang="en">
+  <head>
+      <title>factorial.scm</title>
+      <link type="text/css" rel="stylesheet" href="/assets/lib/app/factorial.css" />
+      <script type="text/javascript" src="/assets/lib/jquery/jquery-1.7.2.min.js"></script>
+      <script type="text/javascript" src="/assets/lib/app/factorial.js"></script>
+  </head>
+  <body>
+    <pre>
+<span class="comment-delimiter">;</span><span class="comment">
+</span><span class="comment-delimiter">;    </span><span class="comment">@file       factorial.scm
+</span><span class="comment-delimiter">;    </span><span class="comment">@brief      Scheme language primer
+</span><span class="comment-delimiter">;    </span><span class="comment">@date       April 2012
+</span><span class="comment-delimiter">;    </span><span class="comment">@copyright  &copy; 2012 &lt;<a href="mailto:okertanov&#64;gmail.com">okertanov&#64;gmail.com</a>&gt;
+</span><span class="comment-delimiter">;</span><span class="comment">
+</span>
+<span class="comment-delimiter">;</span><span class="comment">
+</span><span class="comment-delimiter">; </span><span class="comment">Language
+</span><span class="comment-delimiter">;</span><span class="comment">
+</span>#lang scheme
+
+<span class="comment-delimiter">;</span><span class="comment">
+</span><span class="comment-delimiter">; </span><span class="comment">Declarative factorial function in Scheme
+</span><span class="comment-delimiter">;</span><span class="comment">
+</span>
+
+<span class="obscured definition" id="definition-0"><span class="obscure yes"><span class="comment-delimiter">;</span><span class="comment"></span></span>
+<span class="obscure yes"><span class="comment-delimiter">; </span><span class="comment">Syntactic sugar</span></span>
+<span class="obscure yes"><span class="comment-delimiter">;</span><span class="comment"></span></span>
+
+<span class="obscure yes"><span class="rainbow-delimiters-depth-1">(</span>define-syntax-rule <span class="rainbow-delimiters-depth-2">(</span></span>the a b<span class="obscure yes"><span class="rainbow-delimiters-depth-2">)</span></span>
+  <span class="obscure yes"><span class="rainbow-delimiters-depth-2">(</span><span class="keyword">begin</span> <span class="rainbow-delimiters-depth-3">(</span><span
+  class="keyword">define</span> <span class="function-name">a</span> b<span class="rainbow-delimiters-depth-3">)</span> a<span class="rainbow-delimiters-depth-2">)</span><span class="rainbow-delimiters-depth-1">)</span></span>
+
+<span class="obscure yes"><span class="rainbow-delimiters-depth-1">(</span>define-syntax-rule <span class="rainbow-delimiters-depth-2">(</span></span>is e<span class="obscure yes"><span class="rainbow-delimiters-depth-2">)</span> e<span class="rainbow-delimiters-depth-1">)</span></span>
+
+<span class="obscure yes"><span class="rainbow-delimiters-depth-1">(</span>define-syntax-rule <span class="rainbow-delimiters-depth-2">(</span></span>to e<span class="obscure yes"><span class="rainbow-delimiters-depth-2">)</span> e<span class="rainbow-delimiters-depth-1">)</span></span>
+
+<span class="obscure yes"><span class="rainbow-delimiters-depth-1">(</span><span class="keyword">define</span></span> <span class="function-name">less/than?</span> <span class="obscure yes"><span class="rainbow-delimiters-depth-2">(</span>&#955; <span class="rainbow-delimiters-depth-3">(</span>a b<span class="rainbow-delimiters-depth-3">)</span></span>
+  <span class="obscure yes"><span class="rainbow-delimiters-depth-3">(</span>&lt; a b<span class="rainbow-delimiters-depth-3">)</span><span class="rainbow-delimiters-depth-2">)</span><span class="rainbow-delimiters-depth-1">)</span></span>
+</span> <!-- /definition-0 -->
+
+<span class="comment-delimiter">;</span><span class="comment">
+</span><span class="comment-delimiter">; </span><span class="comment">Formal description
+</span><span class="comment-delimiter">;</span><span class="comment">
+</span>
+<span class="comment description" id="description-1">#|
+    <a href="http://en.wikipedia.org/wiki/Factorial">http://en.wikipedia.org/wiki/Factorial</a>
+
+    <span class="descr-i" data-for="l1">The</span> <span class="descr-i" data-for="l2">factorial</span> <span class="descr-i" data-for="l3">of</span> <span class="descr-i" data-for="l4">a</span> <span class="descr-i" data-for="l5-1">non</span>-<span class="descr-i" data-for="l5-2">negative</span> <span class="descr-i" data-for="l6">integer</span> <span class="descr-i" data-for="l7-1 l7-2">n</span>, <span class="descr-i" data-for="l8">denoted by n!</span>,
+    <span class="descr-i" data-for="l9">is</span> <span class="descr-i" data-for="l10">the</span> <span class="descr-i" data-for="l11">product</span> <span class="descr-i" data-for="l12">of</span> <span class="descr-i" data-for="l13">all</span> <span class="descr-i" data-for="l14">positive</span> <span class="descr-i" data-for="l15">integers</span> <span class="descr-i" data-for="l16">less</span> <span class="descr-i" data-for="l17">than</span> <span class="descr-i" data-for="l18">or</span> <span class="descr-i" data-for="l19">equal</span> <span class="descr-i" data-for="l20">to</span> <span class="descr-i" data-for="l21">n</span>.
+    <span class="descr-i" data-for="l22">The value of 0! is 1</span>.
+|#</span>
+
+<span class="obscured definition" id="definition-1"><span class="obscure yes"><span class="comment-delimiter">;</span><span class="comment"></span></span>
+<span class="obscure yes"><span class="comment-delimiter">; </span><span class="comment">Definition</span></span>
+<span class="obscure yes"><span class="comment-delimiter">;</span><span class="comment"></span></span>
+
+<span class="obscure yes"><span class="rainbow-delimiters-depth-1">(</span></span><span id="l1">the</span> <span id="l2">factorial</span>/<span id="l3">of</span>
+  <span class="obscure yes"><span class="rainbow-delimiters-depth-2">(</span>&#955; <span class="rainbow-delimiters-depth-3">(</span></span><span id="l4">a</span><span class="obscure yes"><span class="rainbow-delimiters-depth-3">)</span></span>
+    <span class="obscure yes"><span class="rainbow-delimiters-depth-3">(</span><span class="keyword">let</span> <span class="rainbow-delimiters-depth-4">(</span><span class="rainbow-delimiters-depth-5">(</span>n a<span class="rainbow-delimiters-depth-5">)</span><span class="rainbow-delimiters-depth-4">)</span></span>
+      <span class="obscure yes"><span class="rainbow-delimiters-depth-4">(</span><span class="keyword">cond</span></span>
+        <span class="obscure yes"><span class="rainbow-delimiters-depth-5">(</span><span class="rainbow-delimiters-depth-6">(</span><span class="keyword">and</span> <span class="rainbow-delimiters-depth-7">(</span></span><span id="l5-1">not</span> <span class="obscure yes"><span class="rainbow-delimiters-depth-8">(</span></span><span id="l5-2">negative</span><span class="obscure yes">?</span> <span id="l7-1">n</span><span class="obscure yes"><span class="rainbow-delimiters-depth-8">)</span><span class="rainbow-delimiters-depth-7">)</span> <span class="rainbow-delimiters-depth-7">(</span></span><span id="l6">integer</span><span class="obscure yes">?</span> <span id="l7-2">n</span><span class="obscure yes"><span class="rainbow-delimiters-depth-7">)</span><span class="rainbow-delimiters-depth-6">)</span></span>
+          <span class="string"><span class="obscure yes">"</span><span id="l8">denoted by n!</span><span class="obscure yes">"</span></span>
+          <span class="obscure yes"><span class="rainbow-delimiters-depth-6">(</span></span><span id="l9">is</span>
+            <span class="obscure yes"><span class="rainbow-delimiters-depth-7">(</span></span><span id="l10">the</span> <span id="l12">of</span>/<span id="l13">all</span>
+              <span class="obscure yes"><span class="rainbow-delimiters-depth-8">(</span></span><span class="obscure yes">for/</span><span id="l11">product</span>
+                <span class="obscure yes"><span class="rainbow-delimiters-depth-9">(</span><span class="rainbow-delimiters-depth-1">(</span>i <span class="rainbow-delimiters-depth-2">(</span><span class="rainbow-delimiters-depth-3">(</span>&#955; <span class="rainbow-delimiters-depth-4">(</span>s<span class="rainbow-delimiters-depth-4">)</span></span>
+                  <span class="obscure yes"><span class="rainbow-delimiters-depth-4">(</span>stop-before</span><span class="obscure yes"> <span class="rainbow-delimiters-depth-5">(</span>in-naturals<span class="rainbow-delimiters-depth-5">)</span></span>
+                    <span class="obscure yes"><span class="rainbow-delimiters-depth-5">(</span>&#955; <span class="rainbow-delimiters-depth-6">(</span>i<span class="rainbow-delimiters-depth-6">)</span></span><span class="obscure yes"><span class="rainbow-delimiters-depth-6">(</span>not <span class="rainbow-delimiters-depth-7">(</span></span><span class="keyword"><span id="l18">or</span></span> <span class="obscure yes"><span class="rainbow-delimiters-depth-8">(</span></span><span id="l16">less</span>/<span id="l17">than</span><span class="obscure yes">?</span><span class="obscure yes"> i s</span><span class="obscure yes"><span class="rainbow-delimiters-depth-8">)</span></span> <span class="obscure yes"><span class="rainbow-delimiters-depth-8">(</span></span><span id="l19">equal</span><span class="obscure yes">?</span><span class="obscure yes"> i s</span><span class="obscure yes"><span class="rainbow-delimiters-depth-8">)</span><span class="rainbow-delimiters-depth-7">)</span><span class="rainbow-delimiters-depth-6">)</span></span><span class="obscure yes"><span class="rainbow-delimiters-depth-5">)</span></span>
+                  <span class="obscure yes"><span class="rainbow-delimiters-depth-4">)</span></span>
+                <span class="obscure yes"><span class="rainbow-delimiters-depth-3">)</span><span class="rainbow-delimiters-depth-3">(</span></span><span id="l20">to</span> <span id="l21">n</span><span class="obscure yes"><span class="rainbow-delimiters-depth-3">)</span><span class="rainbow-delimiters-depth-2">)</span><span class="rainbow-delimiters-depth-1">)</span><span class="rainbow-delimiters-depth-9">)</span></span>
+                <span class="obscure yes"><span class="rainbow-delimiters-depth-9">(</span><span class="keyword">cond</span></span>
+                  <span class="obscure yes"><span class="rainbow-delimiters-depth-1">(</span><span class="rainbow-delimiters-depth-2">(</span><span class="keyword">and</span> <span class="rainbow-delimiters-depth-3">(</span></span><span id="l14">positive</span><span class="obscure yes">?</span><span class="obscure yes"> i</span><span class="obscure yes"><span class="rainbow-delimiters-depth-3">)</span></span> <span class="obscure yes"><span class="rainbow-delimiters-depth-3">(</span></span><span id="l15">integer</span><span class="obscure yes">?</span><span class="obscure yes"> i</span><span class="obscure yes"><span class="rainbow-delimiters-depth-3">)</span><span class="rainbow-delimiters-depth-2">)</span> i<span class="rainbow-delimiters-depth-1">)</span></span>
+                  <span class="obscure yes"><span class="rainbow-delimiters-depth-1">(</span><span class="rainbow-delimiters-depth-2">(</span>zero? i<span class="rainbow-delimiters-depth-2">)</span> </span><span class="string"><span class="obscure yes">"</span><span id="l22">the value of 0! is 1</span><span class="obscure yes">"</span></span><span class="obscure yes"> 1<span class="rainbow-delimiters-depth-1">)</span></span>
+                  <span class="obscure yes"><span class="rainbow-delimiters-depth-1">(</span><span class="keyword">else</span> -inf.0<span class="rainbow-delimiters-depth-1">)</span></span>
+                <span class="obscure yes"><span class="rainbow-delimiters-depth-9">)</span></span>
+              <span class="obscure yes"><span class="rainbow-delimiters-depth-8">)</span></span>
+            <span class="obscure yes"><span class="rainbow-delimiters-depth-7">)</span></span>
+          <span class="obscure yes"><span class="rainbow-delimiters-depth-6">)</span></span>
+        <span class="obscure yes"><span class="rainbow-delimiters-depth-5">)</span></span>
+      <span class="obscure yes"><span class="rainbow-delimiters-depth-4">)</span></span>
+    <span class="obscure yes"><span class="rainbow-delimiters-depth-3">)</span></span>
+  <span class="obscure yes"><span class="rainbow-delimiters-depth-2">)</span></span>
+<span class="obscure yes"><span class="rainbow-delimiters-depth-1">)</span></span>
+</span> <!-- /definition-1 -->
+
+<span class="comment-delimiter">;</span><span class="comment">
+</span><span class="comment-delimiter">; </span><span class="comment">Application
+</span><span class="comment-delimiter">;</span><span class="comment">
+</span><span class="rainbow-delimiters-depth-1">(</span>factorial/of 5<span class="rainbow-delimiters-depth-1">)</span>
+
+<span class="comment-delimiter">;</span><span class="comment">
+</span><span class="comment-delimiter">; </span><span class="comment">Result
+</span><span class="comment-delimiter">;</span><span class="comment">
+</span>
+<span class="comment">#|
+    #&lt;procedure:factorial/of&gt;
+    120
+|#</span>
+</pre>
+  </body>
+</html>

@@ -87,6 +87,8 @@ Other
 
 ### StormOS
 
+### OmniOS
+
 
 Supported platforms
 -------------------

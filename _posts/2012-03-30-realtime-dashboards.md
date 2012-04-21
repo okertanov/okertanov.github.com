@@ -22,3 +22,5 @@ Realtime dashboards and monitoring software
 
 [Amon is a self-hosted, lightweight web application and server monitoring toolkit.](http://amon.cx/)
 
+[Stashboard is a status dashboard for APIs and software services](http://www.stashboard.org/)
+

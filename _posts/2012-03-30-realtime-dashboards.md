@@ -24,3 +24,5 @@ Realtime dashboards and monitoring software
 
 [Stashboard is a status dashboard for APIs and software services](http://www.stashboard.org/)
 
+[github.com/anchepiece/statuspanic](https://github.com/anchepiece/statuspanic)
+

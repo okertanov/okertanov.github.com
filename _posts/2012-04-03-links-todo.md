@@ -25,6 +25,7 @@ Lua
 JavaScript
 ----------
 [js.js A JavaScript JavaScript interpreter](http://jterrace.github.com/js.js/)  
+[microjs.com](http://microjs.com/)  
 
 Node.js
 -------

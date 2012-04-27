@@ -23,7 +23,7 @@ Lisp, Scheme & Clojure
 [Successful Lisp: How to Understand and Use Common Lisp](http://www.psg.com/~dlamkins/sl/)  
 [The Nature of Lisp](http://www.defmacro.org/ramblings/lisp.html)  
 [The Clojure Toolbox - categorised directory of libraries and tools for Clojure](http://www.clojure-toolbox.com/)  
-[Rich Hickey: STMs vs Locks [2008]](http://www.azulsystems.com/blog/cliff/2008-05-27-clojure-stms-vs-locks)  
+[Rich Hickey: STMs vs Locks 2008](http://www.azulsystems.com/blog/cliff/2008-05-27-clojure-stms-vs-locks)  
 
 C/C++
 -----
@@ -52,9 +52,12 @@ Webdev & JavaScript
 [List of freely available programming books](http://stackoverflow.com/questions/194812/list-of-freely-available-programming-books)  
 [Google APIs Discovery Service](https://developers.google.com/discovery/)  
 [github.com/mbostock/d3/wiki/Gallery](https://github.com/mbostock/d3/wiki/Gallery)  
+[Backbone patterns](http://backbone-patterns.heroku.com/)  
+[Exploring Backbone: Part 1](http://javascriptplayground.com/blog/2012/04/backbone-js-tutorial-1)  
 
 Apple Dev
 ---------
+[mockko.com - iPhone UI Design](http://www.mockko.com/)  
 [The Complete Guide for Starting iPhone and iOS Development](http://writings.withoutfriction.com/the-complete-guide-for-starting-iphone-and-io)  
 [github.com/AFNetworking](https://github.com/AFNetworking/AFNetworking/)  
 [trigger.io - Mobile engine for web devs](https://trigger.io/)  

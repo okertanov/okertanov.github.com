@@ -30,6 +30,7 @@ C/C++
 [Thrust: Code at the speed of light (stl-like with GPU)](https://github.com/thrust/thrust)  
 [Bare Bones](http://wiki.osdev.org/Bare_bones)  
 [Build your own operating system](http://himmele.blogspot.com/2011/07/build-your-own-operating-system.html)  
+[STXXL: Standard Template Library for Extra Large Data Sets](http://stxxl.sourceforge.net/)  
 
 Node.js
 -------

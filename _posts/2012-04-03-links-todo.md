@@ -55,6 +55,10 @@ Webdev & JavaScript
 [Backbone patterns](http://backbone-patterns.heroku.com/)  
 [Exploring Backbone: Part 1](http://javascriptplayground.com/blog/2012/04/backbone-js-tutorial-1)  
 
+Unix
+----
+[Web-panel Ajenti](https://github.com/Eugeny/ajenti)  
+
 Apple Dev
 ---------
 [mockko.com - iPhone UI Design](http://www.mockko.com/)  

@@ -37,6 +37,7 @@ Node.js
 [node express boilerplate](https://github.com/mape/node-express-boilerplate)  
 [Node Toolbox](http://toolbox.no.de/)  
 [node.io - a data scraping and processing framework](https://github.com/chriso/node.io)  
+[NowJS creates a magic namespace "now", accessible by server and client](http://nowjs.com/)  
 
 Webdev & JavaScript
 -------------------

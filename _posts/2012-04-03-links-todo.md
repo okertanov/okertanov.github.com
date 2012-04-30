@@ -56,6 +56,7 @@ Webdev & JavaScript
 [How to build a news aggregator with backbone.js - Part 1](http://blog.newsinapp.io/2012/03/15/how-build-news-aggregator-backbonejs-part-1/)  
 [Image patterns for your site](http://subtlepatterns.com/)  
 [JavaScript Patterns Collection](http://shichuan.github.com/javascript-patterns/)  
+[Emscripten: An LLVM-to-JavaScript Compiler](https://github.com/kripken/emscripten)  
 
 Sencha
 ------
@@ -90,6 +91,7 @@ Apple Dev
 Python
 ------
 [Code Like a Pythonista: Idiomatic Python](http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html)  
+[A Guide to Python's Magic Methods](http://www.rafekettler.com/magicmethods.html)  
 
 Lua
 ---

@@ -54,6 +54,7 @@ Webdev & JavaScript
 [github.com/mbostock/d3/wiki/Gallery](https://github.com/mbostock/d3/wiki/Gallery)  
 [Backbone patterns](http://backbone-patterns.heroku.com/)  
 [Exploring Backbone: Part 1](http://javascriptplayground.com/blog/2012/04/backbone-js-tutorial-1)  
+[Image patterns for your site](http://subtlepatterns.com/)  
 
 Unix
 ----

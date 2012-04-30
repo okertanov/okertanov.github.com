@@ -18,13 +18,6 @@ Tools
 [Git Tip of the Week: Finale](http://alblue.bandlem.com/2011/12/git-tip-of-week-finale.html)  
 [dotfiles.github.com](http://dotfiles.github.com/)  
 
-Lisp, Scheme & Clojure
-----------------------
-[Successful Lisp: How to Understand and Use Common Lisp](http://www.psg.com/~dlamkins/sl/)  
-[The Nature of Lisp](http://www.defmacro.org/ramblings/lisp.html)  
-[The Clojure Toolbox - categorised directory of libraries and tools for Clojure](http://www.clojure-toolbox.com/)  
-[Rich Hickey: STMs vs Locks 2008](http://www.azulsystems.com/blog/cliff/2008-05-27-clojure-stms-vs-locks)  
-
 C/C++
 -----
 [Thrust: Code at the speed of light (stl-like with GPU)](https://github.com/thrust/thrust)  
@@ -38,9 +31,14 @@ Node.js
 [Node Toolbox](http://toolbox.no.de/)  
 [node.io - a data scraping and processing framework](https://github.com/chriso/node.io)  
 [NowJS creates a magic namespace "now", accessible by server and client](http://nowjs.com/)  
+[Connect2](http://www.senchalabs.org/connect/)  
+[Разработка WEB-проекта на Node.JS: Часть 1](http://habrahabr.ru/post/138071/)  
+[Разработка WEB-проекта на Node.JS: Часть 2](http://habrahabr.ru/post/138629/)  
+[Шпаргалка по пакетному менеджеру NPM](http://habrahabr.ru/post/133363/)  
 
 Webdev & JavaScript
 -------------------
+[D3 Workshop](http://bost.ocks.org/mike/d3/workshop/)  
 [D3.js - Data-Driven Documents](http://mbostock.github.com/d3/)  
 [js.js A JavaScript JavaScript interpreter](http://jterrace.github.com/js.js/)  
 [microjs.com](http://microjs.com/)  
@@ -55,7 +53,17 @@ Webdev & JavaScript
 [github.com/mbostock/d3/wiki/Gallery](https://github.com/mbostock/d3/wiki/Gallery)  
 [Backbone patterns](http://backbone-patterns.heroku.com/)  
 [Exploring Backbone: Part 1](http://javascriptplayground.com/blog/2012/04/backbone-js-tutorial-1)  
+[How to build a news aggregator with backbone.js - Part 1](http://blog.newsinapp.io/2012/03/15/how-build-news-aggregator-backbonejs-part-1/)  
 [Image patterns for your site](http://subtlepatterns.com/)  
+[JavaScript Patterns Collection](http://shichuan.github.com/javascript-patterns/)  
+
+Sencha
+------
+[Обзор ExtJS 4. Опыт портирования со старой версии](http://habrahabr.ru/post/132978/)  
+[20 правил, которым стоит следовать, когда начинаете работать с EXT JS & Sencha Touch](http://habrahabr.ru/post/132923/)  
+[Руководство по мелочам в Ext JS](http://habrahabr.ru/post/132145/)  
+[Cоздание прототипа социальной сети на ExtJS](http://habrahabr.ru/post/129080/)  
+[Пишем MVC приложение на Ext JS 4 с возможностью офлайн работы](http://habrahabr.ru/post/138054/)  
 
 Unix
 ----
@@ -63,6 +71,7 @@ Unix
 
 Apple Dev
 ---------
+[Apple Developer: Start Developing iOS Apps Today](https://developer.apple.com/library/ios/#referencelibrary/GettingStarted/RoadMapiOS/Introduction/Introduction.html)  
 [mockko.com - iPhone UI Design](http://www.mockko.com/)  
 [The Complete Guide for Starting iPhone and iOS Development](http://writings.withoutfriction.com/the-complete-guide-for-starting-iphone-and-io)  
 [github.com/AFNetworking](https://github.com/AFNetworking/AFNetworking/)  
@@ -74,6 +83,9 @@ Apple Dev
 [Mobile UI Patterns](http://mobile-patterns.com/)  
 [Mobile Patterns via pttrns.com](http://pttrns.com/)  
 [labs.ideeinc.com/multicolr](http://labs.ideeinc.com/multicolr/)  
+[DataKit makes it easy to add web backends to your apps](https://github.com/eaigner/DataKit/)  
+[iPhone UITableView wrapper](https://github.com/onegray/UITableKit)  
+[WeViews - A set of iOS classes for laying out UIViews.](https://github.com/charlesmchen/WeViews)  
 
 Python
 ------
@@ -91,6 +103,7 @@ Other
 [demo.fluent.io](http://demo.fluent.io/)  
 [hyperpolyglot.org](http://hyperpolyglot.org/)  
 [visualland.net](http://www.visualland.net/)  
+[The Algorithm Visualization Portal](http://algoviz.org)  
 [bonsaiden.github.com/JavaScript-Garden](http://bonsaiden.github.com/JavaScript-Garden/)  
 [ANU Quantum Random Numbers Server](http://150.203.48.55/index.php)  
 [Top software dev job boards ](http://www.maxmasnick.com/guides/jobs/)  

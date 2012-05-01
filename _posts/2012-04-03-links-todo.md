@@ -12,18 +12,7 @@ Todo
 ----
 [themeforest.net](http://themeforest.net/)  
 [scriptlance.com](http://www.scriptlance.com/)  
-
-Tools
------
-[Git Tip of the Week: Finale](http://alblue.bandlem.com/2011/12/git-tip-of-week-finale.html)  
-[dotfiles.github.com](http://dotfiles.github.com/)  
-
-C/C++
------
-[Thrust: Code at the speed of light (stl-like with GPU)](https://github.com/thrust/thrust)  
-[Bare Bones](http://wiki.osdev.org/Bare_bones)  
-[Build your own operating system](http://himmele.blogspot.com/2011/07/build-your-own-operating-system.html)  
-[STXXL: Standard Template Library for Extra Large Data Sets](http://stxxl.sourceforge.net/)  
+[hnhiring.me](http://hnhiring.me/)  
 
 Node.js
 -------
@@ -42,6 +31,7 @@ Webdev & JavaScript
 [D3.js - Data-Driven Documents](http://mbostock.github.com/d3/)  
 [js.js A JavaScript JavaScript interpreter](http://jterrace.github.com/js.js/)  
 [microjs.com](http://microjs.com/)  
+[Mozilla wiki: WebAPI](https://wiki.mozilla.org/WebAPI)  
 [JavaScript Garden](http://bonsaiden.github.com/JavaScript-Garden/)  
 [dochub.io](http://dochub.io/)  
 [APIConnect is a Javascript class that provides a simple way to interact with APIs](http://andrewplummer.github.com/APIConnect/)  
@@ -69,10 +59,13 @@ Sencha
 Unix
 ----
 [Web-panel Ajenti](https://github.com/Eugeny/ajenti)  
+[Linux kernel map](http://www.makelinux.net/kernel_map/)  
 
 Apple Dev
 ---------
 [Apple Developer: Start Developing iOS Apps Today](https://developer.apple.com/library/ios/#referencelibrary/GettingStarted/RoadMapiOS/Introduction/Introduction.html)  
+[Google Toolbox for Mac](http://code.google.com/p/google-toolbox-for-mac/)  
+[Minimal iOS boilerplate -- rationalized file names, Google Toolbox for Mac, TestFlight](https://github.com/bdewey/ios-minimalist)  
 [mockko.com - iPhone UI Design](http://www.mockko.com/)  
 [The Complete Guide for Starting iPhone and iOS Development](http://writings.withoutfriction.com/the-complete-guide-for-starting-iphone-and-io)  
 [github.com/AFNetworking](https://github.com/AFNetworking/AFNetworking/)  
@@ -87,6 +80,17 @@ Apple Dev
 [DataKit makes it easy to add web backends to your apps](https://github.com/eaigner/DataKit/)  
 [iPhone UITableView wrapper](https://github.com/onegray/UITableKit)  
 [WeViews - A set of iOS classes for laying out UIViews.](https://github.com/charlesmchen/WeViews)  
+[XNU: The Kernel](http://osxbook.com/book/bonus/ancient/whatismacosx/arch_xnu.html)  
+[llvm.org/docs/AutomaticReferenceCounting.html](http://clang.llvm.org/docs/AutomaticReferenceCounting.html)  
+
+C/C++
+-----
+[Thrust: Code at the speed of light (stl-like with GPU)](https://github.com/thrust/thrust)  
+[Bare Bones](http://wiki.osdev.org/Bare_bones)  
+[Build your own operating system](http://himmele.blogspot.com/2011/07/build-your-own-operating-system.html)  
+[STXXL: Standard Template Library for Extra Large Data Sets](http://stxxl.sourceforge.net/)  
+[Материалы с семинаров Андреаса Раубера и Александра Степанова](http://clubs.ya.ru/company/replies.xml?item_no=25068)  
+[32-bit and 64-bit versions of Windows C++ application](http://bojan-komazec.blogspot.com/2011/10/32-bit-and-64-bit-versions-of-windows-c.html)  
 
 Python
 ------
@@ -95,6 +99,11 @@ Python
 
 Lua
 ---
+
+Tools
+-----
+[Git Tip of the Week: Finale](http://alblue.bandlem.com/2011/12/git-tip-of-week-finale.html)  
+[dotfiles.github.com](http://dotfiles.github.com/)  
 
 Other
 -----

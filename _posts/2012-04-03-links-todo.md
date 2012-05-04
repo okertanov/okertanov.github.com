@@ -13,6 +13,9 @@ Todo
 [themeforest.net](http://themeforest.net/)  
 [scriptlance.com](http://www.scriptlance.com/)  
 [hnhiring.me](http://hnhiring.me/)  
+[my google reader shared items](http://www.google.com/reader/shared/okertanov)  
+[google correlate](http://www.google.com/trends/correlate/draw)  
+[esquire.ru stuff](http://esquire.ru/stuff/)  
 
 Node.js
 -------
@@ -33,6 +36,7 @@ Webdev & JavaScript
 [microjs.com](http://microjs.com/)  
 [Mozilla wiki: WebAPI](https://wiki.mozilla.org/WebAPI)  
 [JavaScript Garden](http://bonsaiden.github.com/JavaScript-Garden/)  
+[jswiki - This wiki indexes libraries and resources available for JavaScript.](https://github.com/bebraw/jswiki/wiki)  
 [dochub.io](http://dochub.io/)  
 [APIConnect is a Javascript class that provides a simple way to interact with APIs](http://andrewplummer.github.com/APIConnect/)  
 [A JavaScript visualization library for HTML and SVG](http://mbostock.github.com/d3/)  
@@ -44,9 +48,11 @@ Webdev & JavaScript
 [Backbone patterns](http://backbone-patterns.heroku.com/)  
 [Exploring Backbone: Part 1](http://javascriptplayground.com/blog/2012/04/backbone-js-tutorial-1)  
 [How to build a news aggregator with backbone.js - Part 1](http://blog.newsinapp.io/2012/03/15/how-build-news-aggregator-backbonejs-part-1/)  
+[Real-time Applications With Node.js and Socket.IO](http://codingcookies.com/2012/05/01/real-time-applications-with-node-js-and-socket-io/)  
 [Image patterns for your site](http://subtlepatterns.com/)  
 [JavaScript Patterns Collection](http://shichuan.github.com/javascript-patterns/)  
 [Emscripten: An LLVM-to-JavaScript Compiler](https://github.com/kripken/emscripten)  
+[Grunt: a task-based command line build tool for JavaScript projects](http://gruntjs.com/)  
 
 Sencha
 ------
@@ -63,6 +69,7 @@ Unix
 
 Apple Dev
 ---------
+[Learn Objective-C](http://cocoadevcentral.com/d/learn_objectivec/)  
 [Apple Developer: Start Developing iOS Apps Today](https://developer.apple.com/library/ios/#referencelibrary/GettingStarted/RoadMapiOS/Introduction/Introduction.html)  
 [Google Toolbox for Mac](http://code.google.com/p/google-toolbox-for-mac/)  
 [Minimal iOS boilerplate -- rationalized file names, Google Toolbox for Mac, TestFlight](https://github.com/bdewey/ios-minimalist)  
@@ -82,20 +89,29 @@ Apple Dev
 [WeViews - A set of iOS classes for laying out UIViews.](https://github.com/charlesmchen/WeViews)  
 [XNU: The Kernel](http://osxbook.com/book/bonus/ancient/whatismacosx/arch_xnu.html)  
 [llvm.org/docs/AutomaticReferenceCounting.html](http://clang.llvm.org/docs/AutomaticReferenceCounting.html)  
+[iOS App Icon Template](http://appicontemplate.com/)  
+[iOS Human Interface Guidelines](http://developer.apple.com/library/ios/#documentation/userexperience/conceptual/mobilehig/Introduction/Introduction.html)  
 
 C/C++
 -----
+[Smart Pointer Programming Techniques](http://www.boost.org/doc/libs/1_48_0/libs/smart_ptr/sp_techniques.html)  
 [Thrust: Code at the speed of light (stl-like with GPU)](https://github.com/thrust/thrust)  
 [Bare Bones](http://wiki.osdev.org/Bare_bones)  
 [Build your own operating system](http://himmele.blogspot.com/2011/07/build-your-own-operating-system.html)  
 [STXXL: Standard Template Library for Extra Large Data Sets](http://stxxl.sourceforge.net/)  
 [Материалы с семинаров Андреаса Раубера и Александра Степанова](http://clubs.ya.ru/company/replies.xml?item_no=25068)  
 [32-bit and 64-bit versions of Windows C++ application](http://bojan-komazec.blogspot.com/2011/10/32-bit-and-64-bit-versions-of-windows-c.html)  
+[Cinder is a peer-reviewed, free, open source C++ library for creative coding](http://libcinder.org/about/)  
+[Clang Static Analyzer](http://clang-analyzer.llvm.org/index.html)  
 
 Python
 ------
 [Code Like a Pythonista: Idiomatic Python](http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html)  
 [A Guide to Python's Magic Methods](http://www.rafekettler.com/magicmethods.html)  
+[Python Ecosystem - An Introduction](http://mirnazim.org/writings/python-ecosystem-introduction/)  
+[Crash into Python](http://stephensugden.com/crash_into_python/)  
+[Techniques for idiomatic Python code](http://www.antoarts.com/pythonic-coding-techniques-for-idiomatic-python-code)  
+[Functional Programming HOWTO](http://docs.python.org/howto/functional.html)  
 
 Lua
 ---

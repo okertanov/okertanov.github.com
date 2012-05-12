@@ -16,6 +16,8 @@ Todo
 [my google reader shared items](http://www.google.com/reader/shared/okertanov)  
 [google correlate](http://www.google.com/trends/correlate/draw)  
 [esquire.ru stuff](http://esquire.ru/stuff/)  
+[NumbersAPI - Bring your metrics and dates to life](http://numbersapi.com/)  
+[Samsung Smart app challenge](http://www.smartappchallenge.com/eng/main.do)  
 
 Node.js
 -------
@@ -24,12 +26,17 @@ Node.js
 [node.io - a data scraping and processing framework](https://github.com/chriso/node.io)  
 [NowJS creates a magic namespace "now", accessible by server and client](http://nowjs.com/)  
 [Connect2](http://www.senchalabs.org/connect/)  
+[expressjs.com - High performance, high class web development for Node.js](http://expressjs.com/)  
+[hook.io](https://github.com/hookio/hook.io)  
+[calip.so](http://calip.so/)  
+[nodejitsu/forever](https://github.com/nodejitsu/forever)  
 [Разработка WEB-проекта на Node.JS: Часть 1](http://habrahabr.ru/post/138071/)  
 [Разработка WEB-проекта на Node.JS: Часть 2](http://habrahabr.ru/post/138629/)  
 [Шпаргалка по пакетному менеджеру NPM](http://habrahabr.ru/post/133363/)  
 
 Webdev & JavaScript
 -------------------
+[Isotope: An exquisite jQuery plugin for magical layouts - isotope.metafizzy.co](http://isotope.metafizzy.co)  
 [D3 Workshop](http://bost.ocks.org/mike/d3/workshop/)  
 [D3.js - Data-Driven Documents](http://mbostock.github.com/d3/)  
 [js.js A JavaScript JavaScript interpreter](http://jterrace.github.com/js.js/)  
@@ -53,6 +60,21 @@ Webdev & JavaScript
 [JavaScript Patterns Collection](http://shichuan.github.com/javascript-patterns/)  
 [Emscripten: An LLVM-to-JavaScript Compiler](https://github.com/kripken/emscripten)  
 [Grunt: a task-based command line build tool for JavaScript projects](http://gruntjs.com/)  
+[html5please.com - the browser support story](http://html5please.com/)  
+[createjs.com](http://createjs.com)  
+[ECMA-262 by Dmitry Soshnikov](http://dmitrysoshnikov.com/)  
+[Accessing the Accelerometer and Gyroscope in JavaScript](http://blogs.adobe.com/cantrell/archives/2012/03/accessing-the-accelerometer-and-gyroscope-in-javascript.html)  
+
+Twitter Bootstrap
+-----------------
+[stylebootstrap.info](http://stylebootstrap.info/)  
+[WrapBootstrap is a marketplace for premium Bootstrap themes](http://wrapbootstrap.com/)  
+[Bootswatch](http://bootswatch.com/)  
+[Built With Bootstrap](http://builtwithbootstrap.com/)  
+[Font Awesome](http://fortawesome.github.com/Font-Awesome/)  
+[jQuery UI Bootstrap](http://addyosmani.github.com/jquery-ui-bootstrap/)  
+[Colorpicker and Datepicker for Twitter Bootstrap](http://www.eyecon.ro/colorpicker-and-datepicker-for-twitter-bootstrap.htm)  
+
 
 Sencha
 ------
@@ -91,6 +113,33 @@ Apple Dev
 [llvm.org/docs/AutomaticReferenceCounting.html](http://clang.llvm.org/docs/AutomaticReferenceCounting.html)  
 [iOS App Icon Template](http://appicontemplate.com/)  
 [iOS Human Interface Guidelines](http://developer.apple.com/library/ios/#documentation/userexperience/conceptual/mobilehig/Introduction/Introduction.html)  
+[A UI framework for Mac based on Core Animation](https://github.com/twitter/twui)  
+
+AirPlay protocol
+----------------
+[open airplay](http://code.google.com/p/open-airplay/)  
+### Open Source
+    PascalWAirplayer - A Python based library
+    Play2Wifi - An AirPlay server also in Python
+    Totem Plugin AirPlay - Plugin enabling AirPlay video playback in the Totem media player (Python)
+    elcuervo/airplay - Airplay bindings to Ruby
+    Airstream Media Player - C# based AirPlay screen for windows and AirPlay server source code
+    xmms2-plugin-airplay - Debian AirPlay library
+    AirPlay NMW - AirPlay plugin for Network Media Tank written in C
+    AirMac - Turns you Macintosh into an Airplay receiver (Objective C)
+    AP4J - Java AirPlay video client
+### Applications
+    Beamer - Send any video to an AppleTV
+    AirParrot - Send the screen of your Mac to an AppleTV (AirPlay Mirroring)
+    AirServer - The best app for turning your Mac into an AirPlay screen.
+    Reflection - Turn your Mac into an AirPlay screen.
+    Banana TV - Another app to turn your Mac into and AirPlay screen
+    Erica's Air Play Utilities - A collection of Mac utilities for streaming video and photos (not open source)
+    doubleTwist AirSync - Stream music/videos from your Android phone over AirPlay
+### Websites
+    Stream DVDs - Stream DVD's from a Mac using Erica's AirFlick and VLC
+    Stream Desktop - Stream your Mac's desktop using Erica's AirFlick and VLC (Audio not supported due to limitations in VLC)
+    lifehacker - Make your entire home AirPlay compatible
 
 C/C++
 -----
@@ -103,6 +152,10 @@ C/C++
 [32-bit and 64-bit versions of Windows C++ application](http://bojan-komazec.blogspot.com/2011/10/32-bit-and-64-bit-versions-of-windows-c.html)  
 [Cinder is a peer-reviewed, free, open source C++ library for creative coding](http://libcinder.org/about/)  
 [Clang Static Analyzer](http://clang-analyzer.llvm.org/index.html)  
+[insidecpp.ru](http://insidecpp.ru)  
+[The Aggregate Magic Algorithms](http://aggregate.org/MAGIC/)  
+[145 алгоритмов на C++.](http://e-maxx.ru/algo/)  
+[Список алгоритмов и структур данных на C++](http://sites.google.com/site/indy256/algo_cpp)  
 
 Python
 ------

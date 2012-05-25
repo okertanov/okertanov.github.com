@@ -18,6 +18,7 @@ Todo
 [esquire.ru stuff](http://esquire.ru/stuff/)  
 [NumbersAPI - Bring your metrics and dates to life](http://numbersapi.com/)  
 [Samsung Smart app challenge](http://www.smartappchallenge.com/eng/main.do)  
+[Chromium embedded](http://code.google.com/p/chromiumembedded/)  
 
 Node.js
 -------
@@ -65,6 +66,24 @@ Webdev & JavaScript
 [ECMA-262 by Dmitry Soshnikov](http://dmitrysoshnikov.com/)  
 [Accessing the Accelerometer and Gyroscope in JavaScript](http://blogs.adobe.com/cantrell/archives/2012/03/accessing-the-accelerometer-and-gyroscope-in-javascript.html)  
 
+Mobile html5 frameworks
+-----------------------
+[jQTouch](http://jqtouch.com/)  
+[jQuery Mobile](http://jquerymobile.com/)  
+[Sencha Touch](http://www.sencha.com/products/touch)  
+[Titanium Mobile SDK](http://www.appcelerator.com/platform/titanium-sdk)  
+[Apache Cordova](http://incubator.apache.org/cordova/)  
+[PhoneGap HTML5 platform](http://phonegap.com/)  
+[trigger.io - Mobile engine for web devs](https://trigger.io/)  
+
+Sencha
+------
+[Обзор ExtJS 4. Опыт портирования со старой версии](http://habrahabr.ru/post/132978/)  
+[20 правил, которым стоит следовать, когда начинаете работать с EXT JS & Sencha Touch](http://habrahabr.ru/post/132923/)  
+[Руководство по мелочам в Ext JS](http://habrahabr.ru/post/132145/)  
+[Cоздание прототипа социальной сети на ExtJS](http://habrahabr.ru/post/129080/)  
+[Пишем MVC приложение на Ext JS 4 с возможностью офлайн работы](http://habrahabr.ru/post/138054/)  
+
 Twitter Bootstrap
 -----------------
 [stylebootstrap.info](http://stylebootstrap.info/)  
@@ -74,15 +93,6 @@ Twitter Bootstrap
 [Font Awesome](http://fortawesome.github.com/Font-Awesome/)  
 [jQuery UI Bootstrap](http://addyosmani.github.com/jquery-ui-bootstrap/)  
 [Colorpicker and Datepicker for Twitter Bootstrap](http://www.eyecon.ro/colorpicker-and-datepicker-for-twitter-bootstrap.htm)  
-
-
-Sencha
-------
-[Обзор ExtJS 4. Опыт портирования со старой версии](http://habrahabr.ru/post/132978/)  
-[20 правил, которым стоит следовать, когда начинаете работать с EXT JS & Sencha Touch](http://habrahabr.ru/post/132923/)  
-[Руководство по мелочам в Ext JS](http://habrahabr.ru/post/132145/)  
-[Cоздание прототипа социальной сети на ExtJS](http://habrahabr.ru/post/129080/)  
-[Пишем MVC приложение на Ext JS 4 с возможностью офлайн работы](http://habrahabr.ru/post/138054/)  
 
 Unix
 ----
@@ -94,7 +104,10 @@ Apple Dev
 [Learn Objective-C](http://cocoadevcentral.com/d/learn_objectivec/)  
 [Apple Developer: Start Developing iOS Apps Today](https://developer.apple.com/library/ios/#referencelibrary/GettingStarted/RoadMapiOS/Introduction/Introduction.html)  
 [Google Toolbox for Mac](http://code.google.com/p/google-toolbox-for-mac/)  
+[Dash – Snippet Manager, Documentation Browser](http://kapeli.com/dash/)  
+[KKGridView - Gridview for iOS. ](https://github.com/kolinkrewinkel/KKGridView)  
 [Minimal iOS boilerplate -- rationalized file names, Google Toolbox for Mac, TestFlight](https://github.com/bdewey/ios-minimalist)  
+[iOS Boilerplate](http://iosboilerplate.com/)  
 [mockko.com - iPhone UI Design](http://www.mockko.com/)  
 [The Complete Guide for Starting iPhone and iOS Development](http://writings.withoutfriction.com/the-complete-guide-for-starting-iphone-and-io)  
 [github.com/AFNetworking](https://github.com/AFNetworking/AFNetworking/)  
@@ -114,6 +127,7 @@ Apple Dev
 [iOS App Icon Template](http://appicontemplate.com/)  
 [iOS Human Interface Guidelines](http://developer.apple.com/library/ios/#documentation/userexperience/conceptual/mobilehig/Introduction/Introduction.html)  
 [A UI framework for Mac based on Core Animation](https://github.com/twitter/twui)  
+[Underscore.m - A port of underscore.js to Objective-C](https://github.com/robb/Underscore.m)  
 
 AirPlay protocol
 ----------------

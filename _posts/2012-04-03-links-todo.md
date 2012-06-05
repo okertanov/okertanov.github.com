@@ -67,6 +67,7 @@ Webdev & JavaScript
 [createjs.com](http://createjs.com)  
 [ECMA-262 by Dmitry Soshnikov](http://dmitrysoshnikov.com/)  
 [Accessing the Accelerometer and Gyroscope in JavaScript](http://blogs.adobe.com/cantrell/archives/2012/03/accessing-the-accelerometer-and-gyroscope-in-javascript.html)  
+[ECMA-262 by Dmitry Soshnikov](http://dmitrysoshnikov.com/)  
 
 Mobile html5 frameworks
 -----------------------

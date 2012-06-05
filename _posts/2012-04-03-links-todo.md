@@ -19,6 +19,8 @@ Todo
 [NumbersAPI - Bring your metrics and dates to life](http://numbersapi.com/)  
 [Samsung Smart app challenge](http://www.smartappchallenge.com/eng/main.do)  
 [Chromium embedded](http://code.google.com/p/chromiumembedded/)  
+[interneturok.ru](http://interneturok.ru/)  
+[Видео-история европейского континента](http://spoon.com.ua/2012/03/evropa-istoriya-kontinenta-video/)  
 
 Node.js
 -------

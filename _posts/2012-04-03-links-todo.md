@@ -210,3 +210,9 @@ Other
 [Perhaps the Best HD View of Earth from Space Ever](http://www.theatlantic.com/technology/archive/2011/11/video-perhaps-the-best-hd-view-of-earth-from-space-ever/248395/)  
 [The SLR Camera Simulator](http://camerasim.com/camera-simulator/)  
 [html5rocks.com How Browsers work](http://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)  
+
+Message Passing
+---------------
+[RabbitMQ - Messaging that just works](http://www.rabbitmq.com/)  
+[Beanstalk is a simple, fast work queue](http://kr.github.com/beanstalkd/)  
+

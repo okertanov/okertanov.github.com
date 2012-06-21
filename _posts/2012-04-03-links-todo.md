@@ -36,6 +36,7 @@ Node.js
 [Разработка WEB-проекта на Node.JS: Часть 1](http://habrahabr.ru/post/138071/)  
 [Разработка WEB-проекта на Node.JS: Часть 2](http://habrahabr.ru/post/138629/)  
 [Шпаргалка по пакетному менеджеру NPM](http://habrahabr.ru/post/133363/)  
+[Socket.IO - realtime apps in every browser and mobile device](http://socket.io/)  
 
 Webdev & JavaScript
 -------------------

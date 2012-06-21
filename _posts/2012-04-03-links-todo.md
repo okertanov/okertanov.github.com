@@ -69,6 +69,7 @@ Webdev & JavaScript
 [Accessing the Accelerometer and Gyroscope in JavaScript](http://blogs.adobe.com/cantrell/archives/2012/03/accessing-the-accelerometer-and-gyroscope-in-javascript.html)  
 [ECMA-262 by Dmitry Soshnikov](http://dmitrysoshnikov.com/)  
 [Learning JavaScript Design Patterns A book by Addy Osmani](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)  
+[Smoothie Charts](http://smoothiecharts.org/)  
 
 Mobile html5 frameworks
 -----------------------

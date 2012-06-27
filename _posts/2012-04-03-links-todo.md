@@ -21,6 +21,7 @@ Todo
 [Chromium embedded](http://code.google.com/p/chromiumembedded/)  
 [interneturok.ru](http://interneturok.ru/)  
 [Видео-история европейского континента](http://spoon.com.ua/2012/03/evropa-istoriya-kontinenta-video/)  
+[Synergy lets you easily share your mouse and keyboard between multiple computers on your desk](http://synergy-foss.org/)  
 
 Node.js
 -------
@@ -211,6 +212,7 @@ Other
 [Perhaps the Best HD View of Earth from Space Ever](http://www.theatlantic.com/technology/archive/2011/11/video-perhaps-the-best-hd-view-of-earth-from-space-ever/248395/)  
 [The SLR Camera Simulator](http://camerasim.com/camera-simulator/)  
 [html5rocks.com How Browsers work](http://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)  
+[Recursive Drawing](http://recursivedrawing.com/)  
 
 Message Passing
 ---------------

@@ -21,6 +21,7 @@ Todo
 [interneturok.ru](http://interneturok.ru/)  
 [Видео-история европейского континента](http://spoon.com.ua/2012/03/evropa-istoriya-kontinenta-video/)  
 [Synergy lets you easily share your mouse and keyboard between multiple computers on your desk](http://synergy-foss.org/)  
+[Gustavo Duarte: the best of](http://duartes.org/gustavo/blog/best-of)  
 
 Node.js
 -------

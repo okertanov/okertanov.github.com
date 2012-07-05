@@ -23,6 +23,7 @@ Todo
 [Synergy lets you easily share your mouse and keyboard between multiple computers on your desk](http://synergy-foss.org/)  
 [Gustavo Duarte: the best of](http://duartes.org/gustavo/blog/best-of)  
 [Create a diagram from ASCII using ditaa](http://ditaa.org/ditaa/)  
+[demonstrations at wolfram.com](http://demonstrations.wolfram.com/)  
 
 Node.js
 -------

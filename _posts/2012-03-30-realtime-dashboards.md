@@ -26,3 +26,7 @@ Realtime dashboards and monitoring software
 
 [github.com/anchepiece/statuspanic](https://github.com/anchepiece/statuspanic)
 
+[Status2K Server Dashboard](http://status2k.com/)
+
+[ServerMonitoringHQ](http://servermonitoringhq.com/)
+

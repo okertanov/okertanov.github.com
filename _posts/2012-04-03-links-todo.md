@@ -4,7 +4,6 @@ title : Interesting and promising technologies, links, etc.
 tagline:
 category : links
 tags : [todo, links]
-published: false
 ---
 {% include JB/setup %}
 

@@ -176,6 +176,7 @@ C/C++
 [The Aggregate Magic Algorithms](http://aggregate.org/MAGIC/)  
 [145 алгоритмов на C++.](http://e-maxx.ru/algo/)  
 [Список алгоритмов и структур данных на C++](http://sites.google.com/site/indy256/algo_cpp)  
+[Hyperpolyglot](http://hyperpolyglot.org/)  
 
 Python
 ------

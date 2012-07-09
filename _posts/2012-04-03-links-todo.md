@@ -222,4 +222,5 @@ Message Passing
 [RabbitMQ - Messaging that just works](http://www.rabbitmq.com/)  
 [ØMQ](http://www.zeromq.org/)  
 [Beanstalk is a simple, fast work queue](http://kr.github.com/beanstalkd/)  
+[amqp.org](http://www.amqp.org/)  
 

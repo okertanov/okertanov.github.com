@@ -24,6 +24,7 @@ Todo
 [Gustavo Duarte: the best of](http://duartes.org/gustavo/blog/best-of)  
 [Create a diagram from ASCII using ditaa](http://ditaa.org/ditaa/)  
 [demonstrations at wolfram.com](http://demonstrations.wolfram.com/)  
+[DIagrams Through Ascii Art](http://ditaa.sourceforge.net/)  
 
 Node.js
 -------

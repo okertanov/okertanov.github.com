@@ -75,6 +75,7 @@ Webdev & JavaScript
 [ECMA-262 by Dmitry Soshnikov](http://dmitrysoshnikov.com/)  
 [Learning JavaScript Design Patterns A book by Addy Osmani](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)  
 [Smoothie Charts](http://smoothiecharts.org/)  
+[jQuery++](http://jquerypp.com/)  
 
 Mobile html5 frameworks
 -----------------------

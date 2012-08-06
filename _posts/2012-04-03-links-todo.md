@@ -25,6 +25,7 @@ Todo
 [Create a diagram from ASCII using ditaa](http://ditaa.org/ditaa/)  
 [demonstrations at wolfram.com](http://demonstrations.wolfram.com/)  
 [DIagrams Through Ascii Art](http://ditaa.sourceforge.net/)  
+[Latex templates](http://www.latextemplates.com/)  
 
 Node.js
 -------

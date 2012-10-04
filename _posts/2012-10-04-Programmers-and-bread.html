@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>C:\Users\okertanov\Desktop\bread.scm.html</title>
+<meta name="Generator" content="Vim/7.3">
+<meta name="plugin-version" content="vim7.3_v10">
+<meta name="syntax" content="scheme">
+<meta name="settings" content="use_css,expand_tabs">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #657b83; background-color: #fdf6e3; }
+body { font-family: monospace; color: #657b83; background-color: #fdf6e3; }
+.Identifier { color: #268bd2; }
+.Statement { color: #719e07; }
+.Special { color: #dc322f; }
+.Constant { color: #2aa198; }
+.Error { color: #dc322f; font-weight: bold; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<span class="Error">#lang</span> scheme
+
+<span class="Constant">&quot;Как два программиста хлеб пекли. <a href="http://habrahabr.ru/post/153225">http://habrahabr.ru/post/153225</a>&quot;</span>
+
+<span class="Constant">&quot; — Нам нужно, чтобы делался хлеб.&quot;</span>
+<span class="Special">(</span><span class="Statement">define</span> <span class="Special">(</span>bread<span class="Special">)</span><span class="schemeStruc"> </span><span class="Special">'(</span><span class="schemeOther">bread</span><span class="Special">))</span>
+<span class="Special">(</span><span class="Statement">define</span> <span class="Special">(</span>make<span class="schemeStruc"> </span><span class="schemeOther">thing</span><span class="Special">)</span><span class="schemeStruc"> </span><span class="Special">(</span><span class="schemeOther">thing</span><span class="Special">))</span>
+
+<span class="Special">(</span>make <span class="schemeOther">bread</span><span class="Special">)</span>
+
+<span class="Constant">&quot; — Нам нужно, чтобы хлеб не просто делался, а выпекался в печке.&quot;</span>
+<span class="Special">(</span><span class="Statement">define</span> <span class="Special">(</span>bake<span class="schemeStruc"> </span><span class="schemeOther">thing</span><span class="Special">)(</span><span class="Error">λ</span><span class="Special">()</span><span class="schemeStruc"> </span><span class="Special">(</span><span class="schemeOther">thing</span><span class="Special">)))</span>
+
+<span class="Special">(</span>make <span class="Special">(</span><span class="schemeOther">bake</span><span class="schemeStruc"> </span><span class="schemeOther">bread</span><span class="Special">))</span>
+
+<span class="Constant">&quot; — Нам нужно, чтобы печки были разных видов.&quot;</span>
+<span class="Special">(</span><span class="Statement">define-syntax</span> use
+  <span class="Special">(</span><span class="Statement">syntax-rules</span><span class="schemeStruc"> </span><span class="Special">(</span>electric<span class="schemeStruc"> </span><span class="schemeOther">microwave</span><span class="schemeStruc"> </span><span class="schemeOther">gas</span><span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="Special">)</span>
+    <span class="Special">((</span>use<span class="schemeStruc"> </span><span class="schemeOther">electric</span><span class="schemeStruc"> </span><span class="Constant">&lt;opt&gt;</span><span class="schemeStruc"> </span><span class="schemeOther">...</span><span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="Constant">&lt;do&gt;</span><span class="schemeStruc"> </span><span class="Constant">&lt;thing&gt;</span><span class="Special">)</span>
+     <span class="Special">(</span>use<span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="Constant">&lt;do&gt;</span><span class="schemeStruc"> </span><span class="Constant">&lt;thing&gt;</span><span class="Special">))</span>
+    <span class="Special">((</span>use<span class="schemeStruc"> </span><span class="schemeOther">microwave</span><span class="schemeStruc"> </span><span class="Constant">&lt;opt&gt;</span><span class="schemeStruc"> </span><span class="schemeOther">...</span><span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="Constant">&lt;do&gt;</span><span class="schemeStruc"> </span><span class="Constant">&lt;thing&gt;</span><span class="Special">)</span>
+     <span class="Special">(</span>use<span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="Constant">&lt;do&gt;</span><span class="schemeStruc"> </span><span class="Constant">&lt;thing&gt;</span><span class="Special">))</span>
+    <span class="Special">((</span>use<span class="schemeStruc"> </span><span class="schemeOther">gas</span><span class="schemeStruc"> </span><span class="Constant">&lt;opt&gt;</span><span class="schemeStruc"> </span><span class="schemeOther">...</span><span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="Constant">&lt;do&gt;</span><span class="schemeStruc"> </span><span class="Constant">&lt;thing&gt;</span><span class="Special">)</span>
+     <span class="Special">(</span><span class="Statement">cond</span><span class="schemeStruc"> </span><span class="Special">((</span><span class="Identifier">&gt;</span><span class="schemeStruc"> </span><span class="Constant">&lt;opt&gt;</span><span class="schemeStruc"> </span><span class="Constant">0</span><span class="schemeStruc"> </span><span class="Special">)</span><span class="schemeStruc"> </span>...<span class="schemeStruc"> </span><span class="Special">(</span><span class="schemeOther">use</span><span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="Constant">&lt;do&gt;</span><span class="schemeStruc"> </span><span class="Constant">&lt;thing&gt;</span><span class="Special">))</span>
+           <span class="Special">(</span><span class="Statement">else</span><span class="schemeStruc"> </span><span class="Special">(</span><span class="Error">λ</span><span class="Special">()(</span>void<span class="Special">)))))</span>
+    <span class="Special">((</span>use<span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="Constant">&lt;do&gt;</span><span class="schemeStruc"> </span><span class="Constant">&lt;thing&gt;</span><span class="Special">)</span>
+     <span class="Special">(</span><span class="Constant">&lt;do&gt;</span><span class="schemeStruc"> </span><span class="Constant">&lt;thing&gt;</span><span class="Special">))))</span>
+
+<span class="Special">(</span>make <span class="Special">(</span><span class="schemeOther">use</span><span class="schemeStruc"> </span><span class="schemeOther">gas</span><span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="schemeOther">bake</span><span class="schemeStruc"> </span><span class="schemeOther">bread</span><span class="Special">))</span>
+<span class="Special">(</span>make <span class="Special">(</span><span class="schemeOther">use</span><span class="schemeStruc"> </span><span class="schemeOther">electric</span><span class="schemeStruc"> </span><span class="Special">(</span><span class="Error">220v</span><span class="schemeStruc"> </span><span class="Constant">1/2A</span><span class="Special">)</span><span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="schemeOther">bake</span><span class="schemeStruc"> </span><span class="schemeOther">bread</span><span class="Special">))</span>
+<span class="Special">(</span>make <span class="Special">(</span><span class="schemeOther">use</span><span class="schemeStruc"> </span><span class="schemeOther">microwave</span><span class="schemeStruc"> </span><span class="schemeOther">vendor:</span><span class="schemeStruc"> </span><span class="Error">Panasonic™</span><span class="schemeStruc"> </span><span class="schemeOther">model:</span><span class="schemeStruc"> </span><span class="schemeOther">EEM1100</span><span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="schemeOther">bake</span><span class="schemeStruc"> </span><span class="schemeOther">bread</span><span class="Special">))</span>
+
+<span class="Constant">&quot; — Нам нужно, чтобы газовая печь не могла печь без газа.&quot;</span>
+<span class="Special">(</span>make <span class="Special">(</span><span class="schemeOther">use</span><span class="schemeStruc"> </span><span class="schemeOther">gas</span><span class="schemeStruc"> </span><span class="Constant">0</span><span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="schemeOther">bake</span><span class="schemeStruc"> </span><span class="schemeOther">bread</span><span class="Special">))</span>
+<span class="Special">(</span>make <span class="Special">(</span><span class="schemeOther">use</span><span class="schemeStruc"> </span><span class="schemeOther">gas</span><span class="schemeStruc"> </span><span class="Constant">5.75</span><span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="schemeOther">bake</span><span class="schemeStruc"> </span><span class="schemeOther">bread</span><span class="Special">))</span>
+
+<span class="Constant">&quot; — Нам нужно, чтобы печки могли выпекать ещё и пирожки (отдельно — с мясом, отдельно — с капустой), и торты.&quot;</span>
+<span class="Special">(</span><span class="Statement">define</span> <span class="Special">(</span>pie<span class="schemeStruc"> </span><span class="schemeOther">filling</span><span class="Special">)</span><span class="schemeStruc"> </span><span class="Special">(</span><span class="Error">λ</span><span class="Special">()(</span><span class="Identifier">list</span><span class="schemeStruc"> </span><span class="schemeOther">filling</span><span class="schemeStruc"> </span><span class="Special">'</span><span class="schemeOther">pie</span><span class="Special">)))</span>
+<span class="Special">(</span><span class="Statement">define</span> <span class="Special">(</span>cake<span class="Special">)</span><span class="schemeStruc"> </span><span class="Special">'(</span><span class="schemeOther">cake</span><span class="Special">))</span>
+
+<span class="Special">(</span>make <span class="Special">(</span><span class="schemeOther">use</span><span class="schemeStruc"> </span><span class="schemeOther">gas</span><span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="schemeOther">bake</span><span class="schemeStruc"> </span><span class="Special">(</span><span class="schemeOther">pie</span><span class="schemeStruc"> </span><span class="Special">'</span><span class="schemeOther">meat</span><span class="Special">)))</span>
+<span class="Special">(</span>make <span class="Special">(</span><span class="schemeOther">use</span><span class="schemeStruc"> </span><span class="schemeOther">gas</span><span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="schemeOther">bake</span><span class="schemeStruc"> </span><span class="Special">(</span><span class="schemeOther">pie</span><span class="schemeStruc"> </span><span class="Special">'</span><span class="schemeOther">cabbage</span><span class="Special">)))</span>
+<span class="Special">(</span>make <span class="Special">(</span><span class="schemeOther">use</span><span class="schemeStruc"> </span><span class="schemeOther">gas</span><span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="schemeOther">bake</span><span class="schemeStruc"> </span><span class="schemeOther">cake</span><span class="Special">))</span>
+
+<span class="Constant">&quot; — Нам нужно, чтобы хлеб, пирожки и торты выпекались по разным рецептам.&quot;</span>
+<span class="Special">(</span><span class="Statement">define</span> <span class="Special">(</span>recipe<span class="schemeStruc"> </span><span class="schemeOther">what</span><span class="schemeStruc"> </span><span class="schemeOther">thing</span><span class="Special">)</span><span class="schemeStruc"> </span><span class="Special">(</span><span class="Error">λ</span><span class="Special">()(</span><span class="Identifier">cons</span><span class="schemeStruc"> </span><span class="schemeOther">what</span><span class="schemeStruc"> </span><span class="Special">(</span><span class="schemeOther">thing</span><span class="Special">))))</span>
+
+<span class="Special">(</span>make <span class="Special">(</span><span class="schemeOther">use</span><span class="schemeStruc"> </span><span class="schemeOther">gas</span><span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="schemeOther">bake</span><span class="schemeStruc"> </span><span class="Special">(</span><span class="schemeOther">recipe</span><span class="schemeStruc"> </span><span class="Constant">&quot;Brown bread&quot;</span><span class="schemeStruc"> </span><span class="schemeOther">bread</span><span class="Special">)))</span>
+<span class="Special">(</span>make <span class="Special">(</span><span class="schemeOther">use</span><span class="schemeStruc"> </span><span class="schemeOther">gas</span><span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="schemeOther">bake</span><span class="schemeStruc"> </span><span class="Special">(</span><span class="schemeOther">recipe</span><span class="schemeStruc"> </span><span class="Constant">&quot;Kiev cake&quot;</span><span class="schemeStruc"> </span><span class="schemeOther">cake</span><span class="Special">)))</span>
+
+<span class="Constant">&quot; — Нам нужно, чтобы в печи можно было обжигать кирпичи.&quot;</span>
+<span class="Special">(</span><span class="Statement">define</span> <span class="Special">(</span>brick<span class="Special">)</span><span class="schemeStruc"> </span><span class="Special">'(</span><span class="schemeOther">brick</span><span class="Special">))</span>
+<span class="Special">(</span><span class="Statement">define</span> <span class="Special">(</span>burn<span class="schemeStruc"> </span><span class="schemeOther">thing</span><span class="Special">)(</span><span class="Error">λ</span><span class="Special">()</span><span class="schemeStruc"> </span><span class="Special">(</span><span class="schemeOther">thing</span><span class="Special">)))</span>
+
+<span class="Special">(</span>make <span class="Special">(</span><span class="schemeOther">use</span><span class="schemeStruc"> </span><span class="schemeOther">electric</span><span class="schemeStruc"> </span><span class="Special">(</span><span class="Error">380v</span><span class="schemeStruc"> </span><span class="Constant">5A</span><span class="Special">)</span><span class="schemeStruc"> </span><span class="schemeOther">oven</span><span class="schemeStruc"> </span><span class="schemeOther">burn</span><span class="schemeStruc"> </span><span class="schemeOther">brick</span><span class="Special">))</span>
+
+</pre>
+</body>
+</html>

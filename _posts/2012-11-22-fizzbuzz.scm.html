@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~\projects\_github_\functional.git\abc\fizzbuzz.scm.html</title>
+<meta name="Generator" content="Vim/7.3">
+<meta name="plugin-version" content="vim7.3_v10">
+<meta name="syntax" content="scheme">
+<meta name="settings" content="use_css,expand_tabs">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #657b83; background-color: #fdf6e3; }
+body { font-family: monospace; color: #657b83; background-color: #fdf6e3; }
+.Special { color: #dc322f; }
+.level9c { color: #3a5fcd; }
+.level10c { color: #43cd80; }
+.level11c { color: #9a32cd; }
+.level12c { color: #cd2626; }
+.Constant { color: #2aa198; }
+.Identifier { color: #268bd2; }
+.level13c { color: #3a5fcd; }
+.level14c { color: #43cd80; }
+.level15c { color: #9a32cd; }
+.Statement { color: #719e07; }
+.level16c { color: #cd2626; }
+.Comment { color: #93a1a1; font-style: italic; }
+.Error { color: #dc322f; font-weight: bold; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<span class="Error">#lang</span> scheme
+
+<span class="Comment">;;</span>
+<span class="Comment">;;  <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html">http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html</a></span>
+<span class="Comment">;;</span>
+<span class="Comment">;;  Write a program that prints the numbers from 1 to 100.</span>
+<span class="Comment">;;  But for multiples of three print &quot;Fizz&quot; instead of the number and</span>
+<span class="Comment">;;  for the multiples of five print &quot;Buzz&quot;.</span>
+<span class="Comment">;;  For numbers which are multiples of both three and five print &quot;FizzBuzz&quot;.</span>
+<span class="Comment">;;</span>
+
+<span class="level16c">(</span><span class="Statement">let*</span> <span class="level15c">(</span><span class="level14c">(</span>range <span class="level13c">(</span><span class="Identifier">cons</span> <span class="Constant">1</span><span class="level13"> </span><span class="Constant">100</span><span class="level13c">)</span><span class="level14c">)</span>
+      <span class="level14c">(</span>fizz? <span class="level13c">(</span><span class="Error">λ</span><span class="level12c">(</span><span class="schemeOther">n</span><span class="level12c">)(</span><span class="Identifier">zero?</span> <span class="level11c">(</span><span class="Identifier">modulo</span> <span class="schemeOther">n</span><span class="level11"> </span><span class="Constant">3</span><span class="level11c">)</span><span class="level12c">)</span><span class="level13c">)</span><span class="level14c">)</span>
+      <span class="level14c">(</span>buzz? <span class="level13c">(</span><span class="Error">λ</span><span class="level12c">(</span><span class="schemeOther">n</span><span class="level12c">)(</span><span class="Identifier">zero?</span> <span class="level11c">(</span><span class="Identifier">modulo</span> <span class="schemeOther">n</span><span class="level11"> </span><span class="Constant">5</span><span class="level11c">)</span><span class="level12c">)</span><span class="level13c">)</span><span class="level14c">)</span><span class="level15c">)</span>
+  <span class="level15c">(</span>for/list <span class="level14c">(</span><span class="level13c">(</span><span class="schemeOther">i</span> <span class="level12c">(</span><span class="schemeOther">stop-after</span>
+                  <span class="level11c">(</span>in-naturals <span class="level10c">(</span><span class="Identifier">car</span> <span class="schemeOther">range</span><span class="level10c">)</span><span class="level11c">)</span>
+                  <span class="level11c">(</span><span class="Error">λ</span><span class="level10c">(</span>s<span class="level10c">)(</span><span class="Identifier">equal?</span> <span class="schemeOther">s</span><span class="level10"> </span><span class="level9c">(</span><span class="Identifier">cdr</span> <span class="schemeOther">range</span><span class="level9c">)</span><span class="level10c">)</span><span class="level11c">)</span><span class="level12c">)</span><span class="level13c">)</span><span class="level14c">)</span>
+    <span class="level14c">(</span><span class="Statement">or</span>
+      <span class="level13c">(</span><span class="Statement">and</span> <span class="level12c">(</span>fizz? <span class="schemeOther">i</span><span class="level12c">)</span><span class="level13"> </span><span class="level12c">(</span><span class="schemeOther">buzz?</span><span class="level12"> </span><span class="schemeOther">i</span><span class="level12c">)</span><span class="level13"> </span><span class="Special">'</span><span class="schemeOther">FizzBuzz</span><span class="level13c">)</span>
+      <span class="level13c">(</span><span class="Statement">and</span> <span class="level12c">(</span>fizz? <span class="schemeOther">i</span><span class="level12c">)</span><span class="level13"> </span><span class="Special">'</span><span class="schemeOther">Fizz</span><span class="level13c">)</span>
+      <span class="level13c">(</span><span class="Statement">and</span> <span class="level12c">(</span>buzz? <span class="schemeOther">i</span><span class="level12c">)</span><span class="level13"> </span><span class="Special">'</span><span class="schemeOther">Buzz</span><span class="level13c">)</span>
+      i<span class="level14c">)</span><span class="level15c">)</span><span class="level16c">)</span>
+</pre>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2131934-17']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</body>
+</html>

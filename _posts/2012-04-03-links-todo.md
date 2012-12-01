@@ -26,6 +26,7 @@ Todo
 [demonstrations at wolfram.com](http://demonstrations.wolfram.com/)  
 [DIagrams Through Ascii Art](http://ditaa.sourceforge.net/)  
 [Latex templates](http://www.latextemplates.com/)  
+[No Eexcuse list](http://www.noexcuselist.com/)  
 
 Node.js
 -------
@@ -77,6 +78,17 @@ Webdev & JavaScript
 [Learning JavaScript Design Patterns A book by Addy Osmani](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)  
 [Smoothie Charts](http://smoothiecharts.org/)  
 [jQuery++](http://jquerypp.com/)  
+[gridster - Plug in to the grid](http://gridster.net/)  
+[Form builder](http://livetools.uiparade.com/form-builder.html)  
+[BigScreen is a simple library for using the JavaScript Full Screen API](http://brad.is/coding/BigScreen/)  
+[duri.me - a super simple dataURI tool](http://duri.me/)  
+[prag.ma/code/sparky](http://prag.ma/code/sparky/)  
+
+### JS & Date
+[XDate - A Modern JavaScript Date Library](http://arshaw.com/xdate/)  
+[Datejs is an open-source JavaScript Date Library](http://www.datejs.com/)  
+[Moment.js - A 5kb javascript date library for parsing, validating, manipulating, and formatting dates.](http://momentjs.com/)  
+
 
 Mobile html5 frameworks
 -----------------------
@@ -87,6 +99,7 @@ Mobile html5 frameworks
 [Apache Cordova](http://incubator.apache.org/cordova/)  
 [PhoneGap HTML5 platform](http://phonegap.com/)  
 [trigger.io - Mobile engine for web devs](https://trigger.io/)  
+[A collection of patterns and modules for responsive designs](http://bradfrost.github.com/this-is-responsive/patterns.html)  
 
 Sencha
 ------
@@ -105,6 +118,12 @@ Twitter Bootstrap
 [Font Awesome](http://fortawesome.github.com/Font-Awesome/)  
 [jQuery UI Bootstrap](http://addyosmani.github.com/jquery-ui-bootstrap/)  
 [Colorpicker and Datepicker for Twitter Bootstrap](http://www.eyecon.ro/colorpicker-and-datepicker-for-twitter-bootstrap.htm)  
+[divshot.com - The Interface Builder for Web Apps](The Interface Builder for Web Apps)  
+[Jetstrap is the premier interface-building tool for Bootstrap.](http://jetstrap.com/)  
+[Twitter Bootstrap Extensions: Notifications](http://nijikokun.github.com/bootstrap-notify/)  
+[Bootsnipp - Design elements and code snippets for Bootstrap HTML/CSS/JS framework](http://bootsnipp.com/)  
+[Editable for Bootstrap](http://vitalets.github.com/bootstrap-editable/)  
+[X-editable - In-place editing with Twitter Bootstrap, jQuery UI or pure jQuery](http://vitalets.github.com/x-editable/)  
 
 Unix
 ----
@@ -142,6 +161,12 @@ Apple Dev
 [A UI framework for Mac based on Core Animation](https://github.com/twitter/twui)  
 [Underscore.m - A port of underscore.js to Objective-C](https://github.com/robb/Underscore.m)  
 [Custom UI Controls for iOS and Mac OS X](http://www.cocoacontrols.com/controls)  
+[iosmix - Components for iOS](http://iosmix.com/)  
+[Custom UI Controls for iOS and Mac OS X](http://www.cocoacontrols.com/)  
+[iOS Developer Library: Developing Web Content for Safari](http://developer.apple.com/library/ios/#documentation/AppleApplications/Reference/SafariWebContent/Introduction/Introduction.html#//apple_ref/doc/uid/TP40002051)  
+[iOS Developer Library: Introduction to Error Handling Programming Guide For Cocoa](http://developer.apple.com/library/ios/#documentation/cocoa/conceptual/ErrorHandlingCocoa/ErrorHandling/ErrorHandling.html#//apple_ref/doc/uid/TP40001806)  
+[25 Free iOS Design Resources](http://nathanbarry.com/25-free-ios-design-resources/)  
+
 
 AirPlay protocol
 ----------------

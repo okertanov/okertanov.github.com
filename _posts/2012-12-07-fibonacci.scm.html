@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>fibonacci.scm</title>
+<meta name="Generator" content="Vim/7.3">
+<meta name="plugin-version" content="vim7.3_v10">
+<meta name="syntax" content="scheme">
+<meta name="settings" content="use_css,expand_tabs">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #657b83; background-color: #fdf6e3; }
+body { font-family: monospace; color: #657b83; background-color: #fdf6e3; }
+.level6c { color: #43cd80; }
+.level7c { color: #9a32cd; }
+.level8c { color: #cd2626; }
+.level9c { color: #3a5fcd; }
+.level10c { color: #43cd80; }
+.Identifier { color: #268bd2; }
+.level11c { color: #9a32cd; }
+.level12c { color: #cd2626; }
+.level13c { color: #3a5fcd; }
+.Constant { color: #2aa198; }
+.level14c { color: #43cd80; }
+.level15c { color: #9a32cd; }
+.Statement { color: #719e07; }
+.level16c { color: #cd2626; }
+.Comment { color: #93a1a1; font-style: italic; }
+.Error { color: #dc322f; font-weight: bold; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<span class="Comment">;;</span>
+<span class="Comment">;; fibonacci.scm</span>
+<span class="Comment">;;</span>
+<span class="Comment">;; @see <a href="http://en.wikipedia.org/wiki/Fibonacci_number">http://en.wikipedia.org/wiki/Fibonacci_number</a></span>
+<span class="Comment">;;</span>
+
+<span class="Comment">;;</span>
+<span class="Comment">;; @fn fibonacci-naïve</span>
+<span class="Comment">;;</span>
+<span class="level16c">(</span><span class="Statement">define</span> fibonacci-naïve
+  <span class="level15c">(</span><span class="Error">λ</span> <span class="level14c">(</span>n<span class="level14c">)</span>
+    <span class="Constant">&quot;This function calculates the Fibonacci sequence naïvely.&quot;</span>
+    <span class="level14c">(</span><span class="Statement">cond</span>
+      <span class="level13c">(</span><span class="level12c">(</span><span class="Statement">or</span> <span class="level11c">(</span><span class="Identifier">=</span> <span class="Constant">0</span><span class="level11"> </span>n<span class="level11c">)</span><span class="level12"> </span><span class="level11c">(</span><span class="Identifier">=</span><span class="level11"> </span><span class="Constant">1</span><span class="level11"> </span><span class="schemeOther">n</span><span class="level11c">)</span><span class="level12c">)</span> <span class="schemeOther">n</span><span class="level13c">)</span>
+      <span class="level13c">(</span><span class="Statement">else</span> <span class="level12c">(</span><span class="Identifier">+</span> <span class="level11c">(</span>fibonacci-naïve <span class="level10c">(</span><span class="Identifier">-</span> n<span class="level10"> </span><span class="Constant">1</span><span class="level10c">)</span><span class="level11c">)</span>
+               <span class="level11c">(</span>fibonacci-naïve <span class="level10c">(</span><span class="Identifier">-</span> n<span class="level10"> </span><span class="Constant">2</span><span class="level10c">)</span><span class="level11c">)</span><span class="level12c">)</span><span class="level13c">)</span><span class="level14c">)</span><span class="level15c">)</span><span class="level16c">)</span>
+
+<span class="Comment">;;</span>
+<span class="Comment">;; @fn fibonacci-linear</span>
+<span class="Comment">;;</span>
+<span class="level16c">(</span><span class="Statement">define</span> fibonacci-linear
+  <span class="level15c">(</span><span class="Error">λ</span> <span class="level14c">(</span>n<span class="level14c">)</span>
+    <span class="Constant">&quot;This function calculates the Fibonacci sequence sequentially.&quot;</span>
+    <span class="level14c">(</span><span class="Statement">cond</span>
+      <span class="level13c">(</span><span class="level12c">(</span><span class="Statement">or</span> <span class="level11c">(</span><span class="Identifier">=</span> <span class="Constant">0</span><span class="level11"> </span>n<span class="level11c">)</span><span class="level12"> </span><span class="level11c">(</span><span class="Identifier">=</span><span class="level11"> </span><span class="Constant">1</span><span class="level11"> </span><span class="schemeOther">n</span><span class="level11c">)</span><span class="level12c">)</span> <span class="schemeOther">n</span><span class="level13c">)</span>
+      <span class="level13c">(</span><span class="Statement">else</span>
+       <span class="level12c">(</span><span class="Identifier">cdr</span>
+        <span class="level11c">(</span>for/fold <span class="level10c">(</span><span class="level9c">(</span><span class="schemeOther">acc</span> <span class="level8c">(</span><span class="Identifier">cons</span> <span class="Constant">0</span><span class="level8"> </span><span class="Constant">1</span><span class="level8c">)</span><span class="level9c">)</span><span class="level10c">)</span><span class="level11"> </span><span class="level10c">(</span><span class="level9c">(</span><span class="schemeOther">i</span><span class="level9"> </span><span class="level8c">(</span><span class="schemeOther">in-range</span><span class="level8"> </span><span class="Constant">2</span><span class="level8"> </span><span class="level7c">(</span><span class="Identifier">+</span> <span class="schemeOther">n</span><span class="level7"> </span><span class="Constant">1</span><span class="level7c">)</span><span class="level8c">)</span><span class="level9c">)</span><span class="level10c">)</span>
+          <span class="level10c">(</span><span class="Identifier">cons</span> <span class="level9c">(</span><span class="Identifier">cdr</span> acc<span class="level9c">)</span><span class="level10"> </span><span class="level9c">(</span><span class="Identifier">+</span><span class="level9"> </span><span class="level8c">(</span><span class="Identifier">car</span> <span class="schemeOther">acc</span><span class="level8c">)</span><span class="level9"> </span><span class="level8c">(</span><span class="Identifier">cdr</span><span class="level8"> </span><span class="schemeOther">acc</span><span class="level8c">)</span><span class="level9c">)</span><span class="level10c">)</span><span class="level11c">)</span><span class="level12c">)</span><span class="level13c">)</span><span class="level14c">)</span><span class="level15c">)</span><span class="level16c">)</span>
+
+<span class="Comment">;;</span>
+<span class="Comment">;; @fn fibonacci-tail</span>
+<span class="Comment">;;</span>
+<span class="level16c">(</span><span class="Statement">define</span> fibonacci-tail
+  <span class="level15c">(</span><span class="Error">λ</span> <span class="level14c">(</span>n<span class="level14c">)</span>
+    <span class="Constant">&quot;This function calculates the Fibonacci sequence tail-optimized.&quot;</span>
+    <span class="level14c">(</span><span class="Statement">letrec</span>
+        <span class="level13c">(</span><span class="level12c">(</span>fibonacci-t
+          <span class="level11c">(</span><span class="Error">λ</span> <span class="level10c">(</span>n <span class="schemeOther">p1</span><span class="level10"> </span><span class="schemeOther">p2</span><span class="level10c">)</span>
+            <span class="level10c">(</span><span class="Statement">cond</span>
+              <span class="level9c">(</span><span class="level8c">(</span><span class="Identifier">=</span> n<span class="level8"> </span><span class="Constant">0</span><span class="level8c">)</span> <span class="schemeOther">p1</span><span class="level9c">)</span>
+              <span class="level9c">(</span><span class="Statement">else</span> <span class="level8c">(</span>fibonacci-t <span class="level7c">(</span><span class="Identifier">-</span> <span class="schemeOther">n</span><span class="level7"> </span><span class="Constant">1</span><span class="level7c">)</span><span class="level8"> </span><span class="schemeOther">p2</span><span class="level8"> </span><span class="level7c">(</span><span class="Identifier">+</span><span class="level7"> </span><span class="schemeOther">p1</span><span class="level7"> </span><span class="schemeOther">p2</span><span class="level7c">)</span><span class="level8c">)</span><span class="level9c">)</span><span class="level10c">)</span><span class="level11c">)</span><span class="level12c">)</span><span class="level13c">)</span>
+      <span class="level13c">(</span>fibonacci-t <span class="schemeOther">n</span><span class="level13"> </span><span class="Constant">0</span><span class="level13"> </span><span class="Constant">1</span><span class="level13c">)</span><span class="level14c">)</span><span class="level15c">)</span><span class="level16c">)</span>
+
+<span class="Comment">;;</span>
+<span class="Comment">;; @fn fibonacci-dijkstra</span>
+<span class="Comment">;;</span>
+<span class="level16c">(</span><span class="Statement">define</span> fibonacci-dijkstra
+  <span class="level15c">(</span><span class="Error">λ</span> <span class="level14c">(</span>n<span class="level14c">)</span>
+    <span class="Constant">&quot;This function calculates the Fibonacci sequence with</span>
+<span class="Constant">     Edsger W. Dijkstra's algorithm.&quot;</span>
+    <span class="level14c">(</span><span class="Statement">letrec</span>
+        <span class="level13c">(</span><span class="level12c">(</span>fibonacci-d
+          <span class="level11c">(</span><span class="Error">λ</span> <span class="level10c">(</span>a <span class="schemeOther">b</span><span class="level10"> </span><span class="schemeOther">p</span><span class="level10"> </span><span class="schemeOther">q</span><span class="level10"> </span><span class="schemeOther">c</span><span class="level10c">)</span>
+            <span class="level10c">(</span><span class="Statement">cond</span> <span class="level9c">(</span><span class="level8c">(</span><span class="Identifier">=</span> c<span class="level8"> </span><span class="Constant">0</span><span class="level8c">)</span> <span class="schemeOther">b</span><span class="level9c">)</span>
+                  <span class="level9c">(</span><span class="level8c">(</span><span class="Identifier">even?</span> c<span class="level8c">)</span> <span class="level8c">(</span><span class="schemeOther">fibonacci-d</span><span class="level8"> </span><span class="schemeOther">a</span>
+                                          b
+                                          <span class="level7c">(</span><span class="Identifier">+</span> <span class="level6c">(</span><span class="Identifier">*</span> p<span class="level6"> </span><span class="schemeOther">p</span><span class="level6c">)</span><span class="level7"> </span><span class="level6c">(</span><span class="Identifier">*</span><span class="level6"> </span><span class="schemeOther">q</span><span class="level6"> </span><span class="schemeOther">q</span><span class="level6c">)</span><span class="level7c">)</span>
+                                          <span class="level7c">(</span><span class="Identifier">+</span> <span class="level6c">(</span><span class="Identifier">*</span> q<span class="level6"> </span><span class="schemeOther">q</span><span class="level6c">)</span><span class="level7"> </span><span class="level6c">(</span><span class="Identifier">*</span><span class="level6"> </span><span class="Constant">2</span><span class="level6"> </span><span class="schemeOther">p</span><span class="level6"> </span><span class="schemeOther">q</span><span class="level6c">)</span><span class="level7c">)</span>
+                                          <span class="level7c">(</span><span class="Identifier">/</span> c<span class="level7"> </span><span class="Constant">2</span><span class="level7c">)</span><span class="level8c">)</span><span class="level9c">)</span>
+                  <span class="level9c">(</span><span class="Statement">else</span> <span class="level8c">(</span>fibonacci-d <span class="level7c">(</span><span class="Identifier">+</span> <span class="level6c">(</span><span class="Identifier">*</span> <span class="schemeOther">b</span><span class="level6"> </span><span class="schemeOther">q</span><span class="level6c">)</span><span class="level7"> </span><span class="level6c">(</span><span class="Identifier">*</span><span class="level6"> </span><span class="schemeOther">a</span><span class="level6"> </span><span class="schemeOther">q</span><span class="level6c">)</span><span class="level7"> </span><span class="level6c">(</span><span class="Identifier">*</span><span class="level6"> </span><span class="schemeOther">a</span><span class="level6"> </span><span class="schemeOther">p</span><span class="level6c">)</span><span class="level7c">)</span>
+                                     <span class="level7c">(</span><span class="Identifier">+</span> <span class="level6c">(</span><span class="Identifier">*</span> b<span class="level6"> </span><span class="schemeOther">p</span><span class="level6c">)</span><span class="level7"> </span><span class="level6c">(</span><span class="Identifier">*</span><span class="level6"> </span><span class="schemeOther">a</span><span class="level6"> </span><span class="schemeOther">q</span><span class="level6c">)</span><span class="level7c">)</span>
+                                     p
+                                     q
+                                     <span class="level7c">(</span><span class="Identifier">-</span> c<span class="level7"> </span><span class="Constant">1</span><span class="level7c">)</span><span class="level8c">)</span><span class="level9c">)</span><span class="level10c">)</span><span class="level11c">)</span><span class="level12c">)</span><span class="level13c">)</span>
+      <span class="level13c">(</span>fibonacci-d <span class="Constant">1</span><span class="level13"> </span><span class="Constant">0</span><span class="level13"> </span><span class="Constant">0</span><span class="level13"> </span><span class="Constant">1</span><span class="level13"> </span><span class="schemeOther">n</span><span class="level13c">)</span><span class="level14c">)</span><span class="level15c">)</span><span class="level16c">)</span>
+
+<span class="Comment">;;</span>
+<span class="Comment">;; @fn syntax for run with ...</span>
+<span class="Comment">;;</span>
+<span class="level16c">(</span><span class="Statement">define-syntax</span> run
+  <span class="level15c">(</span><span class="Statement">syntax-rules</span> <span class="level14c">(</span>with <span class="Identifier">list</span><span class="level14"> </span><span class="Statement">and</span><span class="level14"> </span><span class="schemeOther">time</span><span class="level14c">)</span>
+    <span class="level14c">(</span><span class="level13c">(</span>_ <span class="Constant">&lt;fn&gt;</span><span class="level13"> </span><span class="Constant">&lt;range&gt;</span><span class="level13c">)</span>
+     <span class="level13c">(</span>for <span class="level12c">(</span><span class="level11c">(</span><span class="schemeOther">i</span> <span class="level10c">(</span><span class="schemeOther">in-range</span> <span class="level9c">(</span><span class="Identifier">car</span> <span class="Constant">&lt;range&gt;</span><span class="level9c">)</span><span class="level10"> </span><span class="level9c">(</span><span class="Identifier">cdr</span><span class="level9"> </span><span class="Constant">&lt;range&gt;</span><span class="level9c">)</span><span class="level10c">)</span><span class="level11c">)</span><span class="level12c">)(</span><span class="Constant">&lt;fn&gt;</span> <span class="schemeOther">i</span><span class="level12c">)</span><span class="level13c">)</span><span class="level14c">)</span>
+    <span class="level14c">(</span><span class="level13c">(</span>_ <span class="schemeOther">with</span><span class="level13"> </span><span class="Identifier">list</span><span class="level13"> </span><span class="Constant">&lt;fn&gt;</span><span class="level13"> </span><span class="Constant">&lt;range&gt;</span><span class="level13c">)</span>
+     <span class="level13c">(</span>for/list <span class="level12c">(</span><span class="level11c">(</span><span class="schemeOther">i</span> <span class="level10c">(</span><span class="schemeOther">in-range</span> <span class="level9c">(</span><span class="Identifier">car</span> <span class="Constant">&lt;range&gt;</span><span class="level9c">)</span><span class="level10"> </span><span class="level9c">(</span><span class="Identifier">cdr</span><span class="level9"> </span><span class="Constant">&lt;range&gt;</span><span class="level9c">)</span><span class="level10c">)</span><span class="level11c">)</span><span class="level12c">)(</span><span class="Constant">&lt;fn&gt;</span> <span class="schemeOther">i</span><span class="level12c">)</span><span class="level13c">)</span><span class="level14c">)</span>
+    <span class="level14c">(</span><span class="level13c">(</span>_ <span class="schemeOther">with</span><span class="level13"> </span><span class="schemeOther">time</span><span class="level13"> </span><span class="Constant">&lt;fn&gt;</span><span class="level13"> </span><span class="Constant">&lt;range&gt;</span><span class="level13c">)</span>
+     <span class="level13c">(</span>time <span class="level12c">(</span><span class="schemeOther">for</span> <span class="level11c">(</span><span class="level10c">(</span><span class="schemeOther">i</span> <span class="level9c">(</span><span class="schemeOther">in-range</span> <span class="level8c">(</span><span class="Identifier">car</span> <span class="Constant">&lt;range&gt;</span><span class="level8c">)</span><span class="level9"> </span><span class="level8c">(</span><span class="Identifier">cdr</span><span class="level8"> </span><span class="Constant">&lt;range&gt;</span><span class="level8c">)</span><span class="level9c">)</span><span class="level10c">)</span><span class="level11c">)(</span><span class="Constant">&lt;fn&gt;</span> <span class="schemeOther">i</span><span class="level11c">)</span><span class="level12c">)</span><span class="level13c">)</span><span class="level14c">)</span>
+    <span class="level14c">(</span><span class="level13c">(</span>_ <span class="schemeOther">with</span><span class="level13"> </span><span class="Identifier">list</span><span class="level13"> </span><span class="Statement">and</span><span class="level13"> </span><span class="schemeOther">time</span><span class="level13"> </span><span class="Constant">&lt;fn&gt;</span><span class="level13"> </span><span class="Constant">&lt;range&gt;</span><span class="level13c">)</span>
+     <span class="level13c">(</span>time <span class="level12c">(</span><span class="schemeOther">for/list</span> <span class="level11c">(</span><span class="level10c">(</span><span class="schemeOther">i</span> <span class="level9c">(</span><span class="schemeOther">in-range</span> <span class="level8c">(</span><span class="Identifier">car</span> <span class="Constant">&lt;range&gt;</span><span class="level8c">)</span><span class="level9"> </span><span class="level8c">(</span><span class="Identifier">cdr</span><span class="level8"> </span><span class="Constant">&lt;range&gt;</span><span class="level8c">)</span><span class="level9c">)</span><span class="level10c">)</span><span class="level11c">)(</span><span class="Constant">&lt;fn&gt;</span> <span class="schemeOther">i</span><span class="level11c">)</span><span class="level12c">)</span><span class="level13c">)</span><span class="level14c">)</span><span class="level15c">)</span><span class="level16c">)</span>
+
+<span class="Comment">;;</span>
+<span class="Comment">;; Tests</span>
+<span class="Comment">;;</span>
+<span class="level16c">(</span>fibonacci-naïve <span class="Constant">30</span><span class="level16c">)</span>
+<span class="level16c">(</span>fibonacci-linear <span class="Constant">100000</span><span class="level16c">)</span>
+<span class="level16c">(</span>fibonacci-tail <span class="Constant">100000</span><span class="level16c">)</span>
+<span class="level16c">(</span>fibonacci-dijkstra <span class="Constant">100000</span><span class="level16c">)</span>
+
+<span class="Comment">;;</span>
+<span class="Comment">;; Tests with the ranges</span>
+<span class="Comment">;;</span>
+<span class="level16c">(</span>run <span class="schemeOther">with</span><span class="level16"> </span><span class="schemeOther">time</span><span class="level16"> </span><span class="schemeOther">fibonacci-naïve</span><span class="level16"> </span><span class="level15c">(</span><span class="Identifier">cons</span> <span class="Constant">0</span><span class="level15"> </span><span class="Constant">30</span><span class="level15c">)</span><span class="level16c">)</span>
+<span class="level16c">(</span>run <span class="schemeOther">with</span><span class="level16"> </span><span class="schemeOther">time</span><span class="level16"> </span><span class="schemeOther">fibonacci-linear</span><span class="level16"> </span><span class="level15c">(</span><span class="Identifier">cons</span> <span class="Constant">0</span><span class="level15"> </span><span class="Constant">1000</span><span class="level15c">)</span><span class="level16c">)</span>
+<span class="level16c">(</span>run <span class="schemeOther">with</span><span class="level16"> </span><span class="schemeOther">time</span><span class="level16"> </span><span class="schemeOther">fibonacci-tail</span><span class="level16"> </span><span class="level15c">(</span><span class="Identifier">cons</span> <span class="Constant">0</span><span class="level15"> </span><span class="Constant">1000</span><span class="level15c">)</span><span class="level16c">)</span>
+<span class="level16c">(</span>run <span class="schemeOther">with</span><span class="level16"> </span><span class="schemeOther">time</span><span class="level16"> </span><span class="schemeOther">fibonacci-dijkstra</span><span class="level16"> </span><span class="level15c">(</span><span class="Identifier">cons</span> <span class="Constant">0</span><span class="level15"> </span><span class="Constant">1000</span><span class="level15c">)</span><span class="level16c">)</span>
+
+<span class="Comment">;;</span>
+<span class="Comment">;; Results</span>
+<span class="Comment">;;</span>
+<span class="Comment">;; cpu time: 1030 real time: 1061 gc time: 31</span>
+<span class="Comment">;; cpu time: 312 real time: 334 gc time: 63</span>
+<span class="Comment">;; cpu time: 266 real time: 262 gc time: 31</span>
+<span class="Comment">;; cpu time: 31 real time: 23 gc time: 0</span>
+
+</pre>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2131934-17']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</body>
+</html>

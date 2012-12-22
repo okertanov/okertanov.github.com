@@ -9,6 +9,7 @@ tags : [todo, links]
 
 Todo
 ----
+
 [themeforest.net](http://themeforest.net/)  
 [scriptlance.com](http://www.scriptlance.com/)  
 [hnhiring.me](http://hnhiring.me/)  
@@ -27,6 +28,7 @@ Todo
 [DIagrams Through Ascii Art](http://ditaa.sourceforge.net/)  
 [Latex templates](http://www.latextemplates.com/)  
 [No Eexcuse list](http://www.noexcuselist.com/)  
+[Ai->Canvas](http://visitmix.com/labs/ai2canvas/)  
 
 Node.js
 -------
@@ -83,6 +85,10 @@ Webdev & JavaScript
 [BigScreen is a simple library for using the JavaScript Full Screen API](http://brad.is/coding/BigScreen/)  
 [duri.me - a super simple dataURI tool](http://duri.me/)  
 [prag.ma/code/sparky](http://prag.ma/code/sparky/)  
+[tQuery API : three.js + jQuery](http://jeromeetienne.github.com/tquery/)  
+[HTML5 Cross Browser Polyfills](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills)  
+[Creative web typography styles](http://tympanus.net/codrops/2012/09/12/creative-web-typography-styles/)  
+[Fontello - icon fonts generator](http://fontello.com/)  
 
 ### JS & Date
 [XDate - A Modern JavaScript Date Library](http://arshaw.com/xdate/)  
@@ -100,6 +106,18 @@ Mobile html5 frameworks
 [PhoneGap HTML5 platform](http://phonegap.com/)  
 [trigger.io - Mobile engine for web devs](https://trigger.io/)  
 [A collection of patterns and modules for responsive designs](http://bradfrost.github.com/this-is-responsive/patterns.html)  
+
+Backbone
+--------
+[Developing Backbone.js Applications](http://addyosmani.github.com/backbone-fundamentals/)  
+[Backbonification: migrating a large JavaScript project from DOM spaghetti to Backbone.js](http://www.ofbrooklyn.com/2012/11/13/backbonification-migrating-javascript-to-backbone/)  
+[Backbone has made me a better programmer](http://floatleft.com/notebook/backbone-has-made-me-a-better-programmer)  
+[Пишем реализацию MVC для Backbone](http://habrahabr.ru/post/149626/)  
+[Structuring Complex Backbone.js Apps](http://www.mikkolehtinen.com/blog/2012/08/03/structuring-complex-backbone-dot-js-apps/)  
+[Rendering Views in Backbone.js Isn't Always Simple](http://ianstormtaylor.com/rendering-views-in-backbonejs-isnt-always-simple/)  
+[Backbone.js: Hacker's Guide](http://dailyjs.com/2012/07/19/mvstar-2/)  
+[Backbone.js: Hacker's Guide Part 2](http://dailyjs.com/2012/07/26/mvstar-3/)  
+[Backbone.js: Hacker's Guide Part 3](http://dailyjs.com/2012/08/02/mvstar-4/)  
 
 Sencha
 ------
@@ -124,6 +142,7 @@ Twitter Bootstrap
 [Bootsnipp - Design elements and code snippets for Bootstrap HTML/CSS/JS framework](http://bootsnipp.com/)  
 [Editable for Bootstrap](http://vitalets.github.com/bootstrap-editable/)  
 [X-editable - In-place editing with Twitter Bootstrap, jQuery UI or pure jQuery](http://vitalets.github.com/x-editable/)  
+[LIST OF 210 USEFUL TWITTER BOOTSTRAP RESOURCES](http://www.bootstraphero.com/the-big-badass-list-of-twitter-bootstrap-resources)  
 
 Unix
 ----
@@ -166,6 +185,9 @@ Apple Dev
 [iOS Developer Library: Developing Web Content for Safari](http://developer.apple.com/library/ios/#documentation/AppleApplications/Reference/SafariWebContent/Introduction/Introduction.html#//apple_ref/doc/uid/TP40002051)  
 [iOS Developer Library: Introduction to Error Handling Programming Guide For Cocoa](http://developer.apple.com/library/ios/#documentation/cocoa/conceptual/ErrorHandlingCocoa/ErrorHandling/ErrorHandling.html#//apple_ref/doc/uid/TP40001806)  
 [25 Free iOS Design Resources](http://nathanbarry.com/25-free-ios-design-resources/)  
+[Bundle Programming Guide: Bundle Structures](https://developer.apple.com/library/mac/documentation/CoreFoundation/Conceptual/CFBundles/BundleTypes/BundleTypes.html)  
+[How To Host a Beta Test for your iOS App](http://www.raywenderlich.com/1669/how-to-host-a-beta-test-for-your-ios-app)  
+[Handling Camera in iOS Applications](http://blog.denivip.ru/index.php/2012/07/handling-camera-in-ios-applications/?lang=en)  
 
 
 AirPlay protocol
@@ -246,6 +268,7 @@ Other
 [The SLR Camera Simulator](http://camerasim.com/camera-simulator/)  
 [html5rocks.com How Browsers work](http://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)  
 [Recursive Drawing](http://recursivedrawing.com/)  
+[The Ai->Canvas plug-in enables Adobe® Illustrator® to export vector and bitmap artwork directly to an HTML5]()  
 
 Message Passing
 ---------------

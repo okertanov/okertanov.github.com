@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/projects/pinguin.git/src/toolchains/build-with-ct-ng.sh.html</title>
+<meta name="Generator" content="Vim/7.3">
+<meta name="plugin-version" content="vim7.3_v10">
+<meta name="syntax" content="bash">
+<meta name="settings" content="use_css,expand_tabs">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #657b83; background-color: #fdf6e3; }
+body { font-family: monospace; color: #657b83; background-color: #fdf6e3; }
+.PreProc { color: #cb4b16; }
+.Constant { color: #2aa198; }
+.Special { color: #dc322f; }
+.Identifier { color: #268bd2; }
+.Statement { color: #719e07; }
+.Comment { color: #93a1a1; font-style: italic; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<span class="Comment">#!/bin/bash</span>
+
+<span class="Comment">#</span>
+<span class="Comment">#   @file   build-with-ct-ng.sh</span>
+<span class="Comment">#</span>
+<span class="Comment">#   @brief  The OSX build script for the crosstool-ng toolset.</span>
+<span class="Comment">#           It solves the following crosstool-ng OSX issues:</span>
+<span class="Comment">#               - crosstool-ng build itself;</span>
+<span class="Comment">#               - crosstool-ng target buildable configuration;</span>
+<span class="Comment">#           This script builds arm-unknown-linux-gnueabi toolchain</span>
+<span class="Comment">#           for OSX Mountain Lion (10.8) to use with Raspberry Pi system.</span>
+<span class="Comment">#               gcc: 4.7.2</span>
+<span class="Comment">#               kernel: 3.6.3</span>
+<span class="Comment">#               glibc: 2.14.1</span>
+<span class="Comment">#</span>
+<span class="Comment">#   @author     Oleg Kertanov &lt;okertanov@gmail.com&gt;</span>
+<span class="Comment">#   @copyright  (c) 2012 Oleg Kertanov &lt;okertanov@gmail.com&gt;</span>
+<span class="Comment">#</span>
+<span class="Comment">#   @date   December 2012</span>
+<span class="Comment">#</span>
+<span class="Comment">#   @see    <a href="http://crosstool-ng.org/">http://crosstool-ng.org/</a></span>
+<span class="Comment">#           and</span>
+<span class="Comment">#           <a href="http://okertanov.github.com/2012/12/24/osx-crosstool-ng">http://okertanov.github.com/2012/12/24/osx-crosstool-ng</a></span>
+<span class="Comment">#</span>
+
+<span class="Statement">set</span><span class="Identifier"> </span><span class="Special">-e</span><span class="Identifier"> </span><span class="Special">-u</span>
+
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">0. Starting...</span><span class="Statement">&quot;</span>
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">0.1 Requirements are:</span><span class="Statement">&quot;</span>
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">        Xcode 4, Xcode 4 command line tools, Homebrew, approx. 8Gb free disk space</span><span class="Statement">&quot;</span>
+<span class="Identifier">StartBase</span>=<span class="PreProc">$(</span><span class="Statement">pwd</span><span class="PreProc">)</span>
+
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">1. Installing additional brew packages</span><span class="Statement">&quot;</span>
+<span class="Identifier">AdditionalTools</span>=<span class="Statement">&quot;</span><span class="Constant">gnu-sed binutils gawk automake libtool bash</span><span class="Statement">&quot;</span>
+<span class="Identifier">AdditionalTools2</span>=<span class="Statement">&quot;</span><span class="Constant"><a href="https://raw.github.com/Homebrew/homebrew-dupes/master/grep.rb">https://raw.github.com/Homebrew/homebrew-dupes/master/grep.rb</a></span><span class="Statement">&quot;</span>
+brew update
+brew upgrade
+brew <span class="Statement">install</span><span class=""> </span><span class="PreProc">$AdditionalTools</span><span class=""> &amp;&amp; </span><span class="Statement">true</span>
+brew <span class="Statement">install</span><span class=""> </span><span class="PreProc">$AdditionalTools2</span><span class=""> &amp;&amp; </span><span class="Statement">true</span>
+
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">2. Creating sparse volume</span><span class="Statement">&quot;</span>
+<span class="Identifier">ImageName</span>=CrossToolNG
+<span class="Identifier">ImageNameExt</span>=<span class="PreProc">${</span><span class="PreProc">ImageName</span><span class="PreProc">}</span>.sparseimage
+diskutil umount force /Volumes/<span class="PreProc">${</span><span class="PreProc">ImageName</span><span class="PreProc">}</span><span class=""> &amp;&amp; </span><span class="Statement">true</span>
+<span class="Statement">rm</span> <span class="Special">-f</span><span class=""> </span><span class="PreProc">${</span><span class="PreProc">ImageNameExt</span><span class="PreProc">}</span><span class=""> &amp;&amp; </span><span class="Statement">true</span>
+hdiutil create <span class="PreProc">${</span><span class="PreProc">ImageName</span><span class="PreProc">}</span><span class=""> </span><span class="Special">-volname</span><span class=""> </span><span class="PreProc">${</span><span class="PreProc">ImageName</span><span class="PreProc">}</span><span class=""> </span><span class="Special">-type</span><span class=""> SPARSE </span><span class="Special">-size</span><span class=""> 8g </span><span class="Special">-fs</span><span class=""> HFSX</span>
+hdiutil mount <span class="PreProc">${</span><span class="PreProc">ImageNameExt</span><span class="PreProc">}</span>
+<span class="Statement">cd</span> /Volumes/<span class="PreProc">$ImageName</span>
+
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">3. Downloading crosstool-ng</span><span class="Statement">&quot;</span>
+<span class="Identifier">CrossToolVersion</span>=crosstool-ng-1.<span class="Constant">17</span><span class="">.</span><span class="Constant">0</span>
+<span class="Identifier">CrossToolArchive</span>=<span class="PreProc">${</span><span class="PreProc">CrossToolVersion</span><span class="PreProc">}</span>.tar.bz2
+<span class="Identifier">CrossToolUrl</span>=<a href="http://crosstool-ng.org/download/crosstool-ng/">http://crosstool-ng.org/download/crosstool-ng/</a><span class="PreProc">${</span><span class="PreProc">CrossToolArchive</span><span class="PreProc">}</span>
+wget <span class="PreProc">$CrossToolUrl</span>
+tar xvf <span class="PreProc">$CrossToolArchive</span>
+<span class="Statement">rm</span> <span class="Special">-f</span><span class=""> </span><span class="PreProc">$CrossToolArchive</span>
+<span class="Statement">cd</span> <span class="PreProc">$CrossToolVersion</span>
+
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">4. Patching crosstool-ng</span><span class="Statement">&quot;</span>
+<span class="Statement">sed</span> <span class="Special">-i</span><span class=""> .bak </span><span class="Statement">'</span><span class="Constant">6i\</span>
+<span class="Constant">#include &lt;stddef.h&gt;</span><span class="Statement">'</span> kconfig/zconf.y
+
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">5. Configuring crosstool-ng</span><span class="Statement">&quot;</span>
+./configure <span class="Special">--enable-local</span><span class=""> </span><span class="Statement">\</span>
+  <span class="Special">--with-objcopy=/usr/local/bin/gobjcopyi</span><span class="">       </span><span class="Statement">\</span>
+  <span class="Special">--with-objdump=/usr/local/bin/gobjdump</span><span class="">        </span><span class="Statement">\</span>
+  <span class="Special">--with-ranlib=//usr/local/bin/granlib</span><span class="">         </span><span class="Statement">\</span>
+  <span class="Special">--with-readelf=/usr/local/bin/greadelf</span><span class="">        </span><span class="Statement">\</span>
+  <span class="Special">--with-libtool=/usr/local/bin/glibtool</span><span class="">        </span><span class="Statement">\</span>
+  <span class="Special">--with-libtoolize=/usr/local/bin/glibtoolize</span><span class="">  </span><span class="Statement">\</span>
+  <span class="Special">--with-sed=/usr/local/bin/gsed</span><span class="">                </span><span class="Statement">\</span>
+  <span class="Special">--with-awk=/usr/local/bin/gawk</span><span class="">                </span><span class="Statement">\</span>
+  <span class="Special">--with-automake=/usr/local/bin/automake</span><span class="">       </span><span class="Statement">\</span>
+  <span class="Special">--with-bash=/usr/local/bin/bash</span><span class="">               </span><span class="Statement">\</span>
+  <span class="Identifier">CFLAGS</span>=<span class="Statement">&quot;</span><span class="Constant">-std=c99 -Doffsetof=__builtin_offsetof</span><span class="Statement">&quot;</span>
+
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">6. Building crosstool-ng</span><span class="Statement">&quot;</span>
+make
+
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">7. Creating ARM toolchain</span><span class="Statement">&quot;</span>
+<span class="Identifier">ToolChainName</span>=pinguin-toolchain
+<span class="Statement">cd</span> ..
+<span class="Statement">mkdir</span> <span class="PreProc">$ToolChainName</span>
+<span class="Statement">cd</span> <span class="PreProc">$ToolChainName</span>
+
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">8. Selecting arm-unknown-linux-gnueabi toolchain</span><span class="Statement">&quot;</span>
+<span class="Identifier">PATH</span>=/usr/<span class="Statement">local</span><span class="">/bin:</span><span class="PreProc">$PATH</span><span class=""> ../</span><span class="PreProc">${</span><span class="PreProc">CrossToolVersion</span><span class="PreProc">}</span><span class="">/ct-ng arm-unknown-linux-gnueabi</span>
+
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">9. Cleaning toolchain</span><span class="Statement">&quot;</span>
+<span class="Identifier">PATH</span>=/usr/<span class="Statement">local</span><span class="">/bin:</span><span class="PreProc">$PATH</span><span class=""> ../</span><span class="PreProc">${</span><span class="PreProc">CrossToolVersion</span><span class="PreProc">}</span><span class="">/ct-ng clean</span>
+
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">10. Copying toolchain configuration</span><span class="Statement">&quot;</span>
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">10.1 Pay attantion to the following:</span><span class="Statement">&quot;</span>
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">        Select 'Force unwind support'</span><span class="Statement">&quot;</span>
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">        Unselect 'Link libstdc++ statically onto the gcc binary'</span><span class="Statement">&quot;</span>
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">        Unselect 'Debugging -&gt; dmalloc or fix its build'</span><span class="Statement">&quot;</span>
+cp <span class="PreProc">${</span><span class="PreProc">StartBase</span><span class="PreProc">}</span><span class="">/config-arm-unknown-linux-gnueabi ./.config</span>
+
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">11. Configuring toolchain</span><span class="Statement">&quot;</span>
+<span class="Comment"># Use 'menuconfig' target for the fine tuning.</span>
+<span class="Identifier">PATH</span>=/usr/<span class="Statement">local</span><span class="">/bin:</span><span class="PreProc">$PATH</span><span class=""> ../</span><span class="PreProc">${</span><span class="PreProc">CrossToolVersion</span><span class="PreProc">}</span><span class="">/ct-ng oldconfig</span>
+
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">12. Building toolchain</span><span class="Statement">&quot;</span>
+<span class="Identifier">PATH</span>=/usr/<span class="Statement">local</span><span class="">/bin:</span><span class="PreProc">$PATH</span><span class=""> ../</span><span class="PreProc">${</span><span class="PreProc">CrossToolVersion</span><span class="PreProc">}</span><span class="">/ct-ng build.</span><span class="Constant">4</span>
+
+<span class="Statement">echo</span><span class="Constant"> </span><span class="Statement">&quot;</span><span class="Constant">13. Done.</span><span class="Statement">&quot;</span>
+
+</pre>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2131934-17']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</body>
+</html>

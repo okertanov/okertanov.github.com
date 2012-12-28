@@ -29,6 +29,7 @@ Todo
 [Latex templates](http://www.latextemplates.com/)  
 [No Eexcuse list](http://www.noexcuselist.com/)  
 [Ai->Canvas](http://visitmix.com/labs/ai2canvas/)  
+[HTML5 Security Cheatsheet](http://html5sec.org/)  
 
 Node.js
 -------
@@ -89,6 +90,8 @@ Webdev & JavaScript
 [HTML5 Cross Browser Polyfills](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills)  
 [Creative web typography styles](http://tympanus.net/codrops/2012/09/12/creative-web-typography-styles/)  
 [Fontello - icon fonts generator](http://fontello.com/)  
+[github.com/blueimp/jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload)  
+[Fine Uploader](http://fineuploader.com/)  
 
 ### JS & Date
 [XDate - A Modern JavaScript Date Library](http://arshaw.com/xdate/)  
@@ -188,7 +191,7 @@ Apple Dev
 [Bundle Programming Guide: Bundle Structures](https://developer.apple.com/library/mac/documentation/CoreFoundation/Conceptual/CFBundles/BundleTypes/BundleTypes.html)  
 [How To Host a Beta Test for your iOS App](http://www.raywenderlich.com/1669/how-to-host-a-beta-test-for-your-ios-app)  
 [Handling Camera in iOS Applications](http://blog.denivip.ru/index.php/2012/07/handling-camera-in-ios-applications/?lang=en)  
-
+[Kernel Programming Guide](http://developer.apple.com/library/mac/#documentation/Darwin/Conceptual/KernelProgramming/BSD/BSD.html#//apple_ref/doc/uid/TP30000905-CH214-TPXREF101)  
 
 AirPlay protocol
 ----------------

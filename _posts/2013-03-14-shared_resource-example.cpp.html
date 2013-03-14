@@ -154,6 +154,23 @@ ha::scoped_resource&lt;ffmpeg::AVFrame*&gt; frame(ffmpeg::avcodec_alloc_frame, f
 std::shared_ptr&lt;ffmpeg::AVFrame&gt; frame =
     std::shared_ptr&lt;ffmpeg::AVFrame&gt;(ffmpeg::avcodec_alloc_frame(), ffmpeg::av_free);
 
+<span class="Comment">// Но неужели это все про naked plain-C ресурсы? А где же примеры с годным С++?</span>
+<span class="Comment">// А вот:</span>
+
+ha::mutex mutex;
+
+ha::scoped_resource&lt;ha::mutex*, ha::mutex*&gt; scoped_lock(
+    [](ha::mutex* m) -&gt; ha::mutex*
+    <span class="Error">{</span>
+        <span class="Statement">return</span><span class=""> m-&gt;lock(), m;</span>
+    <span class="Error">}</span><span class="">,</span>
+    &amp;mutex,
+    [](ha::mutex* m) -&gt; <span class="Type">void</span>
+    <span class="Error">{</span>
+        m-&gt;unlock();
+    <span class="Error">}</span>
+);
+
 <span class="Comment">//</span>
 <span class="Comment">// <b>Хорошо, но где же реализация?</b></span>
 <span class="Comment">//     Реализация класса scoped_resource настолько проста и элегантна,</span>

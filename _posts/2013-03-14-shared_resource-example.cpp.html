@@ -156,7 +156,7 @@ std::shared_ptr&lt;ffmpeg::AVFrame&gt; frame =
 <span class="Comment">//</span>
 <span class="Comment">// <b>Хорошо, но где же реализация?</b></span>
 <span class="Comment">//     Реализация класса scoped_resource настолько проста и элегантна,</span>
-<span class="Comment">//     что даже чем-то напомнила мне идею Y-combinator.</span>
+<span class="Comment">//     что даже чем-то напомнила мне идею <dfn><abbr title="Y = λf.(λx.f (x x)) (λx.f (x x))">Y-combinator</abbr></dfn>.</span>
 <span class="Comment">//     То есть возможно с легкостью реализовать что-то подобное, просто начав с декларации</span>
 <span class="Comment">//     конструктора scoped_resource::scoped_resource(initializer_t, finalizer_t);</span>
 <span class="Comment">//     и затем наращивать variadic-часть для параметров.</span>

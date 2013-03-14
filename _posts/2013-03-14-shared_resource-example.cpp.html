@@ -94,9 +94,10 @@ body { font-family: monospace; color: #657b83; background-color: #fdf6e3; font-s
 
 <span class="Comment">//</span>
 <span class="Comment">// В чем преимущество перед другими RAII реализациями враперов ресурсов?</span>
-<span class="Comment">//    1. Инициализатор не вызывается перед конструктором, а в самом конструкторе.</span>
-<span class="Comment">//       Это, например, позволяет реализовать захват ресурса в lazy-стиле,</span>
-<span class="Comment">//       до первого вызова operator resource_t().</span>
+<span class="Comment">//    1. Инициализатор не вызывается во время редукции параметров конструктора,</span>
+<span class="Comment">//       а в самом конструкторе.</span>
+<span class="Comment">//       Это, например, позволяет реализовать "нормальную" передачу инициализатора,</span>
+<span class="Comment">//       что дает возможность захвата ресурса в lazy-стиле, до первого вызова operator resource_t().</span>
 <span class="Comment">//       Еще это позволяет создавать именованные инициализаторы, тем самым переиспользуя их.</span>
 <span class="Comment">//    2. Можно явно передавать какое-либо количество параметров для инициализатора.</span>
 <span class="Comment">//       Тут, возможно, есть еще второй полезный механизм - std::initializer_list.</span>

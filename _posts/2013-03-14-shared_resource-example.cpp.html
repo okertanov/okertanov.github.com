@@ -1,25 +1,26 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>shared_resource-example.cpp</title>
-<meta name="Generator" content="Vim/7.3">
-<meta name="plugin-version" content="vim7.3_v10">
-<meta name="syntax" content="cpp">
-<meta name="settings" content="use_css,expand_tabs">
-<style type="text/css">
-<!--
-pre { font-family: monospace; color: #657b83; background-color: #fdf6e3; font-size: large; }
-body { font-family: monospace; color: #657b83; background-color: #fdf6e3; font-size: large; }
-.Statement { color: #719e07; }
-.Error { color: #dc322f; font-weight: bold; }
-.Constant { color: #2aa198; }
-.Type { color: #b58900; }
-.Comment { color: #93a1a1; font-style: italic; }
--->
-</style>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>shared_resource-example.cpp</title>
+    <meta name="Generator" content="Vim/7.3">
+    <meta name="plugin-version" content="vim7.3_v10">
+    <meta name="syntax" content="cpp">
+    <meta name="settings" content="use_css,expand_tabs">
+    <style type="text/css">
+        <!--
+        pre { font-family: monospace; color: #657b83; background-color: #fdf6e3; font-size: large; }
+        body { font-family: monospace; color: #657b83; background-color: #fdf6e3; font-size: large; }
+        .Statement { color: #719e07; }
+        .Error { color: #dc322f; font-weight: bold; }
+        .Constant { color: #2aa198; }
+        .Type { color: #b58900; }
+        .Comment { color: #93a1a1; font-style: italic; }
+        -->
+    </style>
 </head>
-<body>
+<body lang="ru" dir="ltr">
 <pre>
 <span class="Comment">//</span>
 <span class="Comment">// Недавно пристально посмотрел на С++ Variadic Templates</span>
@@ -93,7 +94,7 @@ body { font-family: monospace; color: #657b83; background-color: #fdf6e3; font-s
 }
 
 <span class="Comment">//</span>
-<span class="Comment">// В чем преимущество перед другими RAII реализациями враперов ресурсов?</span>
+<span class="Comment">// <b>В чем преимущество перед другими RAII реализациями враперов ресурсов?</b></span>
 <span class="Comment">//    1. Инициализатор не вызывается во время редукции параметров конструктора,</span>
 <span class="Comment">//       а в самом конструкторе.</span>
 <span class="Comment">//       Это, например, позволяет реализовать "нормальную" передачу инициализатора,</span>
@@ -110,7 +111,12 @@ body { font-family: monospace; color: #657b83; background-color: #fdf6e3; font-s
 <span class="Comment">//</span>
 
 <span class="Comment">//</span>
-<span class="Comment">// Нужно больше примеров? Их есть у меня:</span>
+<span class="Comment">// <b>Недостатки?</b></span>
+<span class="Comment">//     Иногда все же эффективней написать полноценный врапер ресурса.</span>
+<span class="Comment">//</span>
+
+<span class="Comment">//</span>
+<span class="Comment">// <b>Нужно больше примеров? Их есть у меня:</b></span>
 <span class="Comment">//</span>
 
 <span class="Comment">// Создание AVFormatContext контекста:</span>
@@ -148,8 +154,12 @@ std::shared_ptr&lt;ffmpeg::AVFrame&gt; frame =
     std::shared_ptr&lt;ffmpeg::AVFrame&gt;(ffmpeg::avcodec_alloc_frame(), ffmpeg::av_free);
 
 <span class="Comment">//</span>
-<span class="Comment">// Недостатки?</span>
-<span class="Comment">//     Иногда все же эффективней написать полноценный врапер ресурса.</span>
+<span class="Comment">// <b>Хорошо, но где же реализация?</b></span>
+<span class="Comment">//     Реализация класса scoped_resource настолько проста и элегантна,</span>
+<span class="Comment">//     что даже чем-то напомнила мне идею Y-combinator.</span>
+<span class="Comment">//     То есть возможно с легкостью реализовать что-то подобное, просто начав с декларации</span>
+<span class="Comment">//     конструктора scoped_resource::scoped_resource(initializer_t, finalizer_t);</span>
+<span class="Comment">//     и затем наращивать variadic-часть для параметров.</span>
 <span class="Comment">//</span>
 
 <span class="Comment">//</span>

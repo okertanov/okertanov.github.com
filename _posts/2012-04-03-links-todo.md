@@ -9,7 +9,7 @@ tags : [todo, links]
 
 Todo
 ----
-
+[jobs.thenextweb.com](http://jobs.thenextweb.com/)  
 [themeforest.net](http://themeforest.net/)  
 [scriptlance.com](http://www.scriptlance.com/)  
 [hnhiring.me](http://hnhiring.me/)  
@@ -97,6 +97,9 @@ Webdev & JavaScript
 [XDate - A Modern JavaScript Date Library](http://arshaw.com/xdate/)  
 [Datejs is an open-source JavaScript Date Library](http://www.datejs.com/)  
 [Moment.js - A 5kb javascript date library for parsing, validating, manipulating, and formatting dates.](http://momentjs.com/)  
+
+### JS & Charts
+[github.com/tenXer/xcharts](https://github.com/tenXer/xcharts/)  
 
 
 Mobile html5 frameworks
@@ -192,6 +195,8 @@ Apple Dev
 [How To Host a Beta Test for your iOS App](http://www.raywenderlich.com/1669/how-to-host-a-beta-test-for-your-ios-app)  
 [Handling Camera in iOS Applications](http://blog.denivip.ru/index.php/2012/07/handling-camera-in-ios-applications/?lang=en)  
 [Kernel Programming Guide](http://developer.apple.com/library/mac/#documentation/Darwin/Conceptual/KernelProgramming/BSD/BSD.html#//apple_ref/doc/uid/TP30000905-CH214-TPXREF101)  
+[iOS Code Signing Troubleshooting](http://developer.apple.com/library/ios/#technotes/tn2250/_index.html)  
+[iOS Programming Recipe 11: Using The UITableView Part I](http://nscookbook.com/2013/01/ios-programming-recipe-11-using-the-uitableview-part-i/)  
 
 AirPlay protocol
 ----------------

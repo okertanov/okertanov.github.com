@@ -32,3 +32,13 @@ Realtime dashboards and monitoring software
 
 [Perfectum Dashboard - Admin Template](http://wrapbootstrap.com/preview/WB0PHMG9K)
 
+[Troubleshoot application and server performance](http://www.graphdat.com/)
+
+[lookingglass.unfiniti.com](http://lookingglass.unfiniti.com/)
+
+[tweetping.net](http://tweetping.net/#)
+
+[Real-time data for front-line doers](http://chartbeat.com/)
+
+[All Dashboards Should be Feeds](http://dashes.com/anil/2013/01/all-dashboards-should-be-feeds.html)
+

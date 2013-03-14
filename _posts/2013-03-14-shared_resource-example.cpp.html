@@ -39,7 +39,8 @@ body { font-family: monospace; color: #657b83; background-color: #fdf6e3; font-s
 
 <span class="Comment">// Захватываем ресурс в блоке.</span>
 {
-    ha::scoped_resource&lt;<span class="Type">int</span><span class="">&gt; fd([&amp;filename]()</span>
+    ha::scoped_resource&lt;<span class="Type">int</span><span class="">&gt; fd(</span>
+        [&amp;filename]()
         <span class="Error">{</span>
             <span class="Statement">return</span><span class=""> ::open(filename.c_str(), O_RDONLY);</span>
         <span class="Error">}</span><span class="">,</span>

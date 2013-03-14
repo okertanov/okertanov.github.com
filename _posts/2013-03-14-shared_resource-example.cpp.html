@@ -147,6 +147,11 @@ std::shared_ptr&lt;ffmpeg::AVFrame&gt; frame =
     std::shared_ptr&lt;ffmpeg::AVFrame&gt;(ffmpeg::avcodec_alloc_frame(), ffmpeg::av_free);
 
 <span class="Comment">//</span>
+<span class="Comment">// Недостатки?</span>
+<span class="Comment">//     Иногда все же эффективней написать полноценный врапер ресурса.</span>
+<span class="Comment">//</span>
+
+<span class="Comment">//</span>
 <span class="Comment">// Вот как-то так.</span>
 <span class="Comment">// &copy; 2013 okertanov@gmail.com</span>
 <span class="Comment">//</span>

@@ -92,6 +92,18 @@ body { font-family: monospace; color: #657b83; background-color: #fdf6e3; font-s
 }
 
 <span class="Comment">//</span>
+<span class="Comment">// В чем преимущество перед другими RAII реализациями враперов ресурсов?</span>
+<span class="Comment">//    1. Инициализатор не вызывается перед конструктором, а в самом конструкторе.</span>
+<span class="Comment">//    2. Можно передавать какое-либо количество параметров для инициализатора.</span>
+<span class="Comment">//    3. Если пункт 2. по каким-то причинам не применим, можно в качестве инициализатора</span>
+<span class="Comment">//       передавать лямбду, которая замкнет все параметры инициализатора на себя.</span>
+<span class="Comment">//    4. Деинициализатор имеет единственный параметр - тип ресурса,</span>
+<span class="Comment">//       но в случае необходимости также может быть лямбдой, замыкая</span>
+<span class="Comment">//       на себя дополнительные параметры деинициализации.</span>
+<span class="Comment">//    5. Это намного проще в реализации чем std::shared_ptr(T* ptr, deleter d).</span>
+<span class="Comment">//</span>
+
+<span class="Comment">//</span>
 <span class="Comment">// Вот как-то так.</span>
 <span class="Comment">// &copy; 2013 okertanov@gmail.com</span>
 <span class="Comment">//</span>

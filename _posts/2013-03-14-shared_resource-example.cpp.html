@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>shared_resource-example.cpp</title>
+<meta name="Generator" content="Vim/7.3">
+<meta name="plugin-version" content="vim7.3_v10">
+<meta name="syntax" content="cpp">
+<meta name="settings" content="use_css,expand_tabs">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #657b83; background-color: #fdf6e3; font-size: large; }
+body { font-family: monospace; color: #657b83; background-color: #fdf6e3; font-size: large; }
+.Statement { color: #719e07; }
+.Error { color: #dc322f; font-weight: bold; }
+.Constant { color: #2aa198; }
+.Type { color: #b58900; }
+.Comment { color: #93a1a1; font-style: italic; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<span class="Comment">//</span>
+<span class="Comment">// Вчера пристально посмотрел на С++ Variadic Templates</span>
+<span class="Comment">// и неожиданно для себя изобрел RAII Scoped Resource Manager.</span>
+<span class="Comment">//</span>
+<span class="Comment">// Получилось кратко и эффектно. Например, с C-style выделением памяти:</span>
+<span class="Comment">//</span>
+<span class="Comment">// Аллоцируем ресурс в блоке.</span>
+{
+    ha::scoped_resource&lt;<span class="Type">void</span><span class="">*, </span><span class="Type">size_t</span><span class="">&gt; mem(::malloc, </span><span class="Constant">1</span><span class="">, ::free);</span>
+
+    memset(mem, <span class="Constant">65</span><span class="">, </span><span class="Constant">1</span><span class="">);</span>
+}
+<span class="Comment">// А при выходе из блока ресурс будет освобожден автоматически.</span>
+
+<span class="Comment">// Или еще вот так можно захватывать владение ресурсом &quot;файловый дескриптор&quot;:</span>
+
+<span class="Comment">// Захватываем ресурс в блоке.</span>
+{
+    ha::scoped_resource&lt;<span class="Type">int</span><span class="">&gt; fd([&amp;filename]()</span>
+        <span class="Error">{</span>
+            <span class="Statement">return</span><span class=""> ::open(filename.c_str(), O_RDONLY);</span>
+        <span class="Error">}</span><span class="">,</span>
+        ::close);
+
+    assert(fd != -1);
+
+    std::vector&lt;<span class="Type">char</span><span class="">&gt; buff(</span><span class="Constant">1024</span><span class="">);</span>
+    <span class="Type">ssize_t</span><span class=""> rc = ::read(fd, &amp;buff[</span><span class="Constant">0</span><span class="">], </span><span class="Constant">1024</span><span class="">);</span>
+}
+<span class="Comment">// А при выходе из блока ресурс будет освобожден автоматически</span>
+<span class="Comment">// даже после вызова, например, throw std::exception().</span>
+
+<span class="Comment">// Или второй пример можно переписать даже понятней</span>
+<span class="Comment">// без применения лямбды:</span>
+
+{
+    ha::scoped_resource&lt;<span class="Type">int</span><span class="">, </span><span class="Type">char</span><span class="">*, </span><span class="Type">int</span><span class="">&gt; fd(::open, filename.c_str(), O_RDONLY, ::close);</span>
+
+    <span class="Statement">if</span><span class=""> (fd == -1)</span>
+        <span class="Statement">throw</span><span class=""> std::runtime_error(std::string(</span><span class="Constant">&quot;open() failed: &quot;</span><span class="">) + ::strerror(errno));</span>
+
+    std::vector&lt;<span class="Type">char</span><span class="">&gt; buff(</span><span class="Constant">1024</span><span class="">);</span>
+    <span class="Type">ssize_t</span><span class=""> rc = ::read(fd, &amp;buff[</span><span class="Constant">0</span><span class="">], </span><span class="Constant">1024</span><span class="">);</span>
+}
+
+<span class="Comment">//</span>
+<span class="Comment">// То есть в общем случае имеем темплейтный класс,</span>
+<span class="Comment">// который инстанциируется типом ресурса,</span>
+<span class="Comment">// а его конструктор принимает две std::functions:</span>
+<span class="Comment">// initializer_t и finalizer_t.</span>
+<span class="Comment">//</span>
+<span class="Comment">// Между инициализатором и финализатором следуют параметры</span>
+<span class="Comment">// для инициализатора, которые являются частью спецификаторов шаблона.</span>
+<span class="Comment">//</span>
+<span class="Comment">// Деструктор просто вызывает финализатор для захваченного ресурса.</span>
+<span class="Comment">//</span>
+<span class="Comment">// Для raw-доступа к ресурсу существует оператор типа ресурса.</span>
+<span class="Comment">//</span>
+
+{
+    ha::scoped_resource
+        &lt;resource_t, param1_t, ...&gt;
+            resource
+                (ititializer, param1, ..., finalizer);
+
+    resource_t
+        plain_resource =
+            resource.<span class="Statement">operator</span><span class=""> resource_t();</span>
+}
+
+<span class="Comment">//</span>
+<span class="Comment">// Вот как-то так.</span>
+<span class="Comment">// &copy; 2013 okertanov@gmail.com</span>
+<span class="Comment">//</span>
+
+</pre>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2131934-17']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</body>
+</html>

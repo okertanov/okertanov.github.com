@@ -95,7 +95,11 @@ body { font-family: monospace; color: #657b83; background-color: #fdf6e3; font-s
 <span class="Comment">//</span>
 <span class="Comment">// В чем преимущество перед другими RAII реализациями враперов ресурсов?</span>
 <span class="Comment">//    1. Инициализатор не вызывается перед конструктором, а в самом конструкторе.</span>
-<span class="Comment">//    2. Можно передавать какое-либо количество параметров для инициализатора.</span>
+<span class="Comment">//       Это, например, позволяет реализовать захват ресурса в lazy-стиле,</span>
+<span class="Comment">//       до первого вызова operator resource_t().</span>
+<span class="Comment">//       Еще это позволяет создавать именованные инициализаторы, тем самым переиспользуя их.</span>
+<span class="Comment">//    2. Можно явно передавать какое-либо количество параметров для инициализатора.</span>
+<span class="Comment">//       Тут, возможно, есть еще второй полезный механизм - std::initializer_list.</span>
 <span class="Comment">//    3. Если пункт 2. по каким-то причинам не применим, можно в качестве инициализатора</span>
 <span class="Comment">//       передавать лямбду, которая замкнет все параметры инициализатора на себя.</span>
 <span class="Comment">//    4. Деинициализатор имеет единственный параметр - тип ресурса,</span>
@@ -103,6 +107,44 @@ body { font-family: monospace; color: #657b83; background-color: #fdf6e3; font-s
 <span class="Comment">//       на себя дополнительные параметры деинициализации.</span>
 <span class="Comment">//    5. Это намного проще в реализации чем std::shared_ptr(T* ptr, deleter d).</span>
 <span class="Comment">//</span>
+
+<span class="Comment">//</span>
+<span class="Comment">// Нужно больше примеров? Их есть у меня:</span>
+<span class="Comment">//</span>
+
+<span class="Comment">// Создание AVFormatContext контекста:</span>
+ha::scoped_resource&lt;ffmpeg::AVFormatContext*&gt; formatctx
+    (ffmpeg::avformat_alloc_context, ffmpeg::avformat_free_context);
+
+<span class="Comment">// Это есть аналог следующего:</span>
+std::shared_ptr&lt;ffmpeg::AVFormatContext&gt; formatctx =
+    std::shared_ptr&lt;ffmpeg::AVFormatContext&gt;
+        (ffmpeg::avformat_alloc_context(), ffmpeg::avformat_free_context);
+
+
+<span class="Comment">// Или вот еще, тут применяется составной деинициализатор:</span>
+ha::scoped_resource&lt;ffmpeg::AVCodecContext*&gt; codecctx(
+        ffmpeg::avcodec_alloc_context,
+        [](ffmpeg::AVCodecContext* c)
+        <span class="Error">{</span>
+            ffmpeg::avcodec_close(c),
+                ffmpeg::av_free(c);
+        <span class="Error">}</span><span class="">);</span>
+
+<span class="Comment">// А этот пример интересен тем, что происходит захват ресурса, который не нужно освобождать:</span>
+ha::scoped_resource&lt;ffmpeg::AVCodec*, ffmpeg::AVCodecID&gt; codec(
+        ffmpeg::avcodec_find_decoder,
+        codecctx-&gt;codec_id,
+        [](__attribute__((unused)) ffmpeg::AVCodec* c)
+        <span class="Error">{</span>
+        <span class="Error">}</span><span class="">);</span>
+
+<span class="Comment">// И наконец самый простой oneliner:</span>
+ha::scoped_resource&lt;ffmpeg::AVFrame*&gt; frame(ffmpeg::avcodec_alloc_frame, ffmpeg::av_free);
+
+<span class="Comment">// Который аналог следующего:</span>
+std::shared_ptr&lt;ffmpeg::AVFrame&gt; frame =
+    std::shared_ptr&lt;ffmpeg::AVFrame&gt;(ffmpeg::avcodec_alloc_frame(), ffmpeg::av_free);
 
 <span class="Comment">//</span>
 <span class="Comment">// Вот как-то так.</span>

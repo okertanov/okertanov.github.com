@@ -42,3 +42,5 @@ Realtime dashboards and monitoring software
 
 [All Dashboards Should be Feeds](http://dashes.com/anil/2013/01/all-dashboards-should-be-feeds.html)
 
+[FnordMetric powers highly customizable real-time analytics dashboards](http://fnordmetric.io/)
+

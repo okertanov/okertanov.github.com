@@ -44,3 +44,5 @@ Realtime dashboards and monitoring software
 
 [FnordMetric powers highly customizable real-time analytics dashboards](http://fnordmetric.io/)
 
+[linux-dash – A drop-in, low-overhead monitoring web dashboard for a linux machine.](https://github.com/afaqurk/linux-dash)
+

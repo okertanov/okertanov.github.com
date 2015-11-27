@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/Documents/probe.scm.html</title>
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v2">
+<meta name="syntax" content="scheme">
+<meta name="settings" content="use_css,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="solarized">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #657b83; background-color: #fdf6e3; }
+body { font-family: monospace; color: #657b83; background-color: #fdf6e3; }
+* { font-size: 1em; }
+.Statement { color: #719e07; }
+.Comment { color: #93a1a1; font-style: italic; }
+.Constant { color: #2aa198; }
+.Special { color: #dc322f; }
+.Identifier { color: #268bd2; }
+.Error { color: #dc322f; font-weight: bold; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+-->
+</script>
+</head>
+<body>
+<pre id='vimCodeElement'>
+<span class="Error">#lang</span> scheme
+
+<span class="Comment">; Syntactic sugar</span>
+<span class="Special">(</span><span class="Statement">define</span> ^ <span class="Identifier">expt</span><span class="Special">)</span>
+<span class="Special">(</span><span class="Statement">define</span> &lt;&lt; arithmetic-shift<span class="Special">)</span>
+
+<span class="Comment">; Как можно получать степени двойки:</span>
+<span class="Comment">; арифметически, алгоритмически, императивно</span>
+<span class="Comment">; и рекурсивно.</span>
+
+<span class="Special">(</span><span class="Identifier">*</span> <span class="Constant">2</span> <span class="Constant">2</span> <span class="Constant">2</span><span class="Special">)</span>
+<span class="Special">(</span>^ <span class="Constant">2</span> <span class="Constant">3</span><span class="Special">)</span>
+<span class="Special">(</span>&lt;&lt; <span class="Constant">1</span> <span class="Constant">3</span><span class="Special">)</span>
+
+<span class="Special">(</span><span class="Statement">define</span> nexpt
+  <span class="Special">(</span><span class="Error">λ</span> <span class="Special">(</span>n p<span class="Special">)</span>
+    <span class="Special">(</span><span class="Statement">cond</span>
+      <span class="Special">((</span><span class="Identifier">&lt;</span> p <span class="Constant">1</span><span class="Special">)</span> <span class="Constant">1</span><span class="Special">)</span>
+      <span class="Special">(</span><span class="Statement">else</span> <span class="Special">(</span><span class="Identifier">*</span> n <span class="Special">(</span>nexpt n <span class="Special">(</span><span class="Identifier">-</span> p <span class="Constant">1</span><span class="Special">)))))))</span>
+
+<span class="Special">(</span>nexpt <span class="Constant">2</span> <span class="Constant">3</span><span class="Special">)</span>
+
+<span class="Comment">;</span>
+<span class="Comment">; 8</span>
+<span class="Comment">; 8</span>
+<span class="Comment">; 8</span>
+<span class="Comment">; 8</span>
+<span class="Comment">;</span>
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

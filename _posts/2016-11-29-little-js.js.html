@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/Documents/little-js.js.html</title>
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="javascript">
+<meta name="settings" content="use_css,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="solarized">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #657b83; background-color: #fdf6e3; }
+body { font-family: monospace; color: #657b83; background-color: #fdf6e3; }
+* { font-size: 12pt; }
+.Statement { color: #719e07; }
+.Comment { color: #93a1a1; font-style: italic; }
+.Identifier { color: #268bd2; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+-->
+</script>
+</head>
+<body>
+<pre id='vimCodeElement'>
+<span class="Comment">//</span>
+<span class="Comment">// &quot;A little JavaScript problem&quot;</span>
+<span class="Comment">// The problem: define functions range, map, reverse and foreach,</span>
+<span class="Comment">// obeying the restrictions below, such that the following program works properly.</span>
+<span class="Comment">// It prints the squares of numbers from 1 to 10, in reverse order.</span>
+<span class="Comment">//</span>
+<span class="Comment">// See <a href="http://lisperator.net/blog/a-little-javascript-problem/">http://lisperator.net/blog/a-little-javascript-problem/</a></span>
+<span class="Comment">//</span>
+
+<span class="Identifier">var</span> range = <span class="Identifier">function</span>(from, to) <span class="Identifier">{</span>
+  <span class="Statement">return</span> <span class="Identifier">function</span>(cb) <span class="Identifier">{</span>
+    <span class="Statement">for</span> (<span class="Identifier">var</span> i = from; i &lt;= to; i++) cb(i);
+  <span class="Identifier">}</span>
+<span class="Identifier">}</span>
+
+<span class="Identifier">var</span> map = <span class="Identifier">function</span>(numbers, fn) <span class="Identifier">{</span>
+  <span class="Statement">return</span> <span class="Identifier">function</span>(cb) <span class="Identifier">{</span>
+    numbers(<span class="Identifier">function</span>(i) <span class="Identifier">{</span> cb(fn(i)); <span class="Identifier">}</span>);
+  <span class="Identifier">}</span>
+<span class="Identifier">}</span>
+
+<span class="Identifier">var</span> reverse = <span class="Identifier">function</span>(numbers) <span class="Identifier">{</span>
+  <span class="Identifier">var</span> continua = <span class="Identifier">function</span>(ofn, fn, param) <span class="Identifier">{</span>
+    <span class="Statement">return</span> <span class="Identifier">function</span>() <span class="Identifier">{</span> fn(param), ofn(fn, param); <span class="Identifier">}</span>
+  <span class="Identifier">}</span>
+
+  <span class="Statement">return</span> <span class="Identifier">function</span>(cb) <span class="Identifier">{</span>
+    <span class="Identifier">var</span> inner = <span class="Identifier">function</span>() <span class="Identifier">{}</span>;
+    numbers(<span class="Identifier">function</span>(i) <span class="Identifier">{</span> inner = continua(inner, cb, i); <span class="Identifier">}</span>);
+    inner();
+  <span class="Identifier">}</span>
+<span class="Identifier">}</span>
+
+<span class="Identifier">var</span> foreach = <span class="Identifier">function</span>(numbers, fn) <span class="Identifier">{</span>
+  numbers(fn);
+<span class="Identifier">}</span>
+
+<span class="Identifier">var</span> numbers = range(1, 11);
+numbers = map(numbers, <span class="Identifier">function</span>(n) <span class="Identifier">{</span> <span class="Statement">return</span> n * n <span class="Identifier">}</span>);
+numbers = reverse(numbers);
+foreach(numbers, console.log);
+
+<span class="Comment">//</span>
+<span class="Comment">// Output:</span>
+<span class="Comment">//        100</span>
+<span class="Comment">//        81</span>
+<span class="Comment">//        64</span>
+<span class="Comment">//        49</span>
+<span class="Comment">//        36</span>
+<span class="Comment">//        25</span>
+<span class="Comment">//        16</span>
+<span class="Comment">//        9</span>
+<span class="Comment">//        4</span>
+<span class="Comment">//        1</span>
+<span class="Comment">//</span>
+
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

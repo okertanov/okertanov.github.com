@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>~/Desktop/qbf.ts.html</title>
+<meta name="Generator" content="Vim/8.2">
+<meta name="plugin-version" content="vim8.1_v2">
+<meta name="syntax" content="typescript">
+<meta name="settings" content="use_css,no_foldcolumn,expand_tabs,prevent_copy=,use_input_for_pc=fallback">
+<meta name="colorscheme" content="molokai">
+<style>
+<!--
+pre { font-family: monospace; color: #d0d0d0; background-color: #121212; }
+body { font-family: monospace; color: #d0d0d0; background-color: #121212; }
+* { font-size: 1.1em; }
+.String { color: #afaf87; }
+.Number { color: #af5fff; }
+.Statement { color: #d7005f; font-weight: bold; }
+.StorageClass { color: #ff8700; }
+.Structure { color: #5fd7ff; }
+.Normal { color: #d0d0d0; background-color: #121212; padding-bottom: 1px; }
+.Comment { color: #5f5f5f; }
+.Special { color: #5fd7ff; background-color: #080808; padding-bottom: 1px; }
+.Identifier { color: #ff8700; font-weight: bold; }
+.PreProc { color: #87ff00; }
+.Function { color: #87ff00; }
+.Keyword { color: #d7005f; font-weight: bold; }
+.Operator { color: #d7005f; }
+.Exception { color: #87ff00; font-weight: bold; }
+.Type { color: #5fd7ff; }
+-->
+</style>
+</head>
+<body>
+<pre id='vimCodeElement'>
+<span class="Comment">/*</span>
+<span class="Comment">  Given string that says:</span>
+<span class="Comment">  &quot;The quick brown fox jumps over the lazy dog.&quot;</span>
+
+<span class="Comment">  Create 'Parser' class that accepts a string like this and </span>
+<span class="Comment">  returns the instances of 'Animal' class  with the 'name' and</span>
+<span class="Comment">  optional 'color' properties if defined.</span>
+<span class="Comment">*/</span>
+
+<span class="Comment">//</span>
+<span class="Comment">// Token</span>
+<span class="Comment">//</span>
+
+<span class="Keyword">class</span> Token <span class="Function">{</span>
+  <span class="Function">constructor</span><span class="Normal">(</span><span class="Keyword">readonly</span><span class="PreProc"> keyword</span>:<span class="PreProc"> </span><span class="Type">string</span><span class="Normal">)</span> <span class="Function">{</span>
+  <span class="Function">}</span>
+
+  <span class="Function">accept</span><span class="Normal">(</span><span class="PreProc">v</span>:<span class="PreProc"> </span><span class="Identifier">VisitorInterface</span>&lt;<span class="Identifier">Token</span>&gt;<span class="Normal">)</span>: <span class="Type">void</span> <span class="Function">{</span>
+    v.visit<span class="Normal">(</span><span class="Structure">this</span><span class="Normal">)</span>;
+  <span class="Function">}</span>
+<span class="Function">}</span>
+
+<span class="Keyword">class</span> AnimalToken <span class="Keyword">extends</span> Token <span class="Function">{</span> <span class="Function">}</span>
+<span class="Keyword">class</span> ColorToken <span class="Keyword">extends</span> Token <span class="Function">{</span> <span class="Function">}</span>
+
+<span class="Comment">//</span>
+<span class="Comment">// Grammar</span>
+<span class="Comment">//</span>
+
+<span class="Identifier">enum </span>Grammar <span class="Function">{</span>
+  fox = <span class="String">'fox'</span>,
+  dog = <span class="String">'dog'</span>,
+  brown = <span class="String">'brown'</span>,
+<span class="Function">}</span>
+
+<span class="Comment">//</span>
+<span class="Comment">// Token Builder</span>
+<span class="Comment">//</span>
+
+<span class="Keyword">interface</span> <span class="Function">TokenBuilderInterface</span> <span class="Function">{</span>
+  <span class="Function">from</span><span class="Normal">(</span><span class="PreProc">s</span>:<span class="PreProc"> </span><span class="Type">string</span><span class="Normal">)</span>: <span class="Identifier">Token</span><span class="Exception">;</span>
+<span class="Function">}</span>
+
+<span class="Keyword">class</span> TokenBuilder <span class="Keyword">implements</span> TokenBuilderInterface <span class="Function">{</span>
+  <span class="Keyword">private</span> <span class="StorageClass">static</span> <span class="Keyword">readonly</span> <span class="Function">mapping</span> = <span class="Identifier">new</span> <span class="Structure">Map</span><span class="Normal">(</span><span class="Function">[</span>
+    <span class="Function">[</span>Grammar.fox, <span class="Normal">(</span><span class="PreProc">k</span>:<span class="PreProc"> </span><span class="Type">string</span><span class="Normal">)</span><span class="PreProc"> </span><span class="Type">=&gt;</span> <span class="Identifier">new</span> AnimalToken<span class="Normal">(</span>k<span class="Normal">)</span><span class="Function">]</span>,
+    <span class="Function">[</span>Grammar.dog, <span class="Normal">(</span><span class="PreProc">k</span>:<span class="PreProc"> </span><span class="Type">string</span><span class="Normal">)</span><span class="PreProc"> </span><span class="Type">=&gt;</span> <span class="Identifier">new</span> AnimalToken<span class="Normal">(</span>k<span class="Normal">)</span><span class="Function">]</span>,
+    <span class="Function">[</span>Grammar.brown, <span class="Normal">(</span><span class="PreProc">k</span>:<span class="PreProc"> </span><span class="Type">string</span><span class="Normal">)</span><span class="PreProc"> </span><span class="Type">=&gt;</span> <span class="Identifier">new</span> ColorToken<span class="Normal">(</span>k<span class="Normal">)</span><span class="Function">]</span>,
+    <span class="Function">[</span><span class="String">''</span>, <span class="Normal">(</span><span class="PreProc">k</span>:<span class="PreProc"> </span><span class="Type">string</span><span class="Normal">)</span><span class="PreProc"> </span><span class="Type">=&gt;</span> <span class="Identifier">new</span> Token<span class="Normal">(</span>k<span class="Normal">)</span><span class="Function">]</span>,
+  <span class="Function">]</span><span class="Normal">)</span>;
+
+  <span class="Function">from</span><span class="Normal">(</span><span class="PreProc">s</span>:<span class="PreProc"> </span><span class="Type">string</span><span class="Normal">)</span>: <span class="Identifier">Token</span> <span class="Function">{</span>
+    <span class="Identifier">const</span> token =
+      TokenBuilder.mapping.<span class="Keyword">get</span><span class="Normal">(</span>s<span class="Normal">)</span>?.<span class="Normal">(</span>s<span class="Normal">)</span> ??
+      TokenBuilder.mapping.<span class="Keyword">get</span><span class="Normal">(</span><span class="String">''</span><span class="Normal">)</span>?.<span class="Normal">(</span>s<span class="Normal">)</span>;
+    <span class="Statement">return</span> token!;
+  <span class="Function">}</span>
+<span class="Function">}</span>
+
+<span class="Comment">//</span>
+<span class="Comment">// Parser</span>
+<span class="Comment">//</span>
+
+<span class="Keyword">class</span> Parser <span class="Function">{</span>
+  <span class="Function">constructor</span><span class="Normal">(</span>
+<span class="PreProc">    </span><span class="Keyword">private</span><span class="PreProc"> </span><span class="Keyword">readonly</span><span class="PreProc"> builder</span>:<span class="PreProc"> </span><span class="Identifier">TokenBuilderInterface</span><span class="Operator">,</span>
+<span class="PreProc">    </span><span class="Keyword">private</span><span class="PreProc"> </span><span class="Keyword">readonly</span><span class="PreProc"> visitor</span>:<span class="PreProc"> </span><span class="Identifier">VisitorInterface</span>&lt;<span class="Identifier">Token</span>&gt;<span class="Operator">,</span>
+<span class="PreProc">    </span><span class="Keyword">private</span><span class="PreProc"> </span><span class="Keyword">readonly</span><span class="PreProc"> stream</span>:<span class="PreProc"> </span><span class="Type">string</span>
+<span class="PreProc">  </span><span class="Normal">)</span> <span class="Function">{</span>
+  <span class="Function">}</span>
+
+  <span class="Function">tokenize</span><span class="Normal">()</span>: <span class="Identifier">Token</span>[] <span class="Function">{</span>
+    <span class="Identifier">const</span> tokens = <span class="Structure">this</span>.stream
+      .<span class="Keyword">split</span><span class="Normal">(</span><span class="String">/\W+/</span><span class="Normal">)</span>
+      .<span class="Keyword">filter</span><span class="Normal">(</span><span class="PreProc">t</span> <span class="Type">=&gt;</span> !!t<span class="Normal">)</span>
+      .<span class="Keyword">map</span><span class="Normal">(</span><span class="PreProc">t</span> <span class="Type">=&gt;</span> t.<span class="Keyword">trim</span><span class="Normal">()</span>.<span class="Keyword">toLowerCase</span><span class="Normal">())</span>
+      .<span class="Keyword">map</span><span class="Normal">(</span><span class="PreProc">t</span> <span class="Type">=&gt;</span> <span class="Structure">this</span>.builder.from<span class="Normal">(</span>t<span class="Normal">))</span>;
+    <span class="Statement">return</span> tokens;
+  <span class="Function">}</span>
+
+  <span class="Function">parse</span><span class="Normal">()</span>: <span class="Identifier">Entity</span>[] <span class="Function">{</span>
+    <span class="Identifier">const</span> tokens = <span class="Structure">this</span>.tokenize<span class="Normal">()</span>;
+    tokens.<span class="Keyword">forEach</span><span class="Normal">(</span><span class="PreProc">t</span> <span class="Type">=&gt;</span> t?.accept<span class="Normal">(</span><span class="Structure">this</span>.visitor<span class="Normal">))</span>;
+    <span class="Statement">return</span> tokens;
+  <span class="Function">}</span>
+<span class="Function">}</span>
+
+<span class="Comment">//</span>
+<span class="Comment">// Visitor</span>
+<span class="Comment">//</span>
+
+<span class="Keyword">interface</span> <span class="Function">VisitorInterface</span>&lt;<span class="Identifier">T</span>&gt; <span class="Function">{</span>
+  <span class="Function">visit</span><span class="Normal">(</span><span class="PreProc">t</span>:<span class="PreProc"> </span><span class="Identifier">T</span><span class="Normal">)</span>: <span class="Type">void</span><span class="Exception">;</span>
+<span class="Function">}</span>
+
+<span class="Keyword">class</span> TokenVisitor <span class="Keyword">implements</span> VisitorInterface&lt;<span class="Identifier">Token</span>&gt; <span class="Function">{</span>
+  <span class="Keyword">private</span> <span class="Function">colors</span>: <span class="Identifier">Token</span>[] = <span class="Function">[]</span>;
+  <span class="Keyword">readonly</span> <span class="Function">visited</span>: <span class="Identifier">Token</span>[] = <span class="Function">[]</span>;
+  <span class="Keyword">readonly</span> <span class="Function">accumulated</span>: <span class="Identifier">Entity</span>[] = <span class="Function">[]</span>;
+
+  <span class="Keyword">private</span> <span class="Keyword">readonly</span> <span class="Function">mapping</span> = <span class="Identifier">new</span> <span class="Structure">Map</span>&lt;<span class="Type">string</span>, <span class="Normal">(</span><span class="Special">t</span>:<span class="Special"> </span><span class="Identifier">Token</span><span class="Normal">) </span><span class="Function">=&gt;</span> <span class="Type">void</span>&gt;<span class="Normal">(</span><span class="Function">[</span>
+    <span class="Function">[</span>
+      AnimalToken.<span class="Keyword">name</span>,
+      <span class="Normal">(</span><span class="PreProc">t</span>:<span class="PreProc"> </span><span class="Identifier">Token</span><span class="Normal">)</span><span class="PreProc"> </span><span class="Type">=&gt;</span> <span class="Function">{</span>
+        <span class="Identifier">const</span> color = <span class="Structure">this</span>.colors.<span class="Keyword">pop</span><span class="Normal">()</span>?.keyword;
+        <span class="Identifier">const</span> animal = <span class="Identifier">new</span> Animal<span class="Normal">(</span>t.keyword, color<span class="Normal">)</span>;
+        <span class="Structure">this</span>.colors.<span class="Keyword">splice</span><span class="Normal">(</span><span class="Number">0</span>, <span class="Structure">this</span>.colors.<span class="Keyword">length</span><span class="Normal">)</span>;
+        <span class="Structure">this</span>.accumulated.<span class="Keyword">push</span><span class="Normal">(</span>animal<span class="Normal">)</span>;
+      <span class="Function">}</span>
+    <span class="Function">]</span>,
+    <span class="Function">[</span>
+      ColorToken.<span class="Keyword">name</span>,
+      <span class="Normal">(</span><span class="PreProc">t</span>:<span class="PreProc"> </span><span class="Identifier">Token</span><span class="Normal">)</span><span class="PreProc"> </span><span class="Type">=&gt;</span> <span class="Function">{</span>
+        <span class="Structure">this</span>.colors.<span class="Keyword">push</span><span class="Normal">(</span>t<span class="Normal">)</span>;
+      <span class="Function">}</span>
+    <span class="Function">]</span>,
+    <span class="Function">[</span>
+      Token.<span class="Keyword">name</span>,
+      <span class="Normal">(</span><span class="PreProc">_</span>:<span class="PreProc"> </span><span class="Identifier">Token</span><span class="Normal">)</span><span class="PreProc"> </span><span class="Type">=&gt;</span> <span class="Function">{</span>
+        <span class="Structure">this</span>.colors.<span class="Keyword">splice</span><span class="Normal">(</span><span class="Number">0</span>, <span class="Structure">this</span>.colors.<span class="Keyword">length</span><span class="Normal">)</span>;
+      <span class="Function">}</span>
+    <span class="Function">]</span>,
+  <span class="Function">]</span><span class="Normal">)</span>;
+
+  <span class="Comment">// Would be nice to have polymorfic overloading here</span>
+  <span class="Function">visit</span><span class="Normal">(</span><span class="PreProc">t</span>:<span class="PreProc"> </span><span class="Identifier">AnimalToken</span><span class="Normal">)</span>: <span class="Type">void</span>;
+  <span class="Function">visit</span><span class="Normal">(</span><span class="PreProc">t</span>:<span class="PreProc"> </span><span class="Identifier">ColorToken</span><span class="Normal">)</span>: <span class="Type">void</span>;
+  <span class="Function">visit</span><span class="Normal">(</span><span class="PreProc">t</span>:<span class="PreProc"> </span><span class="Identifier">Token</span><span class="Normal">)</span>: <span class="Type">void</span> <span class="Function">{</span>
+    <span class="Structure">this</span>.visited.<span class="Keyword">push</span><span class="Normal">(</span>t<span class="Normal">)</span>;
+    <span class="Identifier">const</span> tokenHandler = <span class="Structure">this</span>.mapping.<span class="Keyword">get</span><span class="Normal">(</span>t.constructor.<span class="Keyword">name</span><span class="Normal">)</span>;
+    tokenHandler?.<span class="Normal">(</span>t<span class="Normal">)</span>;
+  <span class="Function">}</span>
+<span class="Function">}</span>
+
+<span class="Comment">//</span>
+<span class="Comment">// Domain</span>
+<span class="Comment">//</span>
+
+<span class="Special">abstract</span> <span class="Keyword">class</span> Entity <span class="Function">{</span> <span class="Function">}</span>
+
+<span class="Keyword">class</span> Animal <span class="Keyword">implements</span> Entity <span class="Function">{</span>
+  <span class="Function">constructor</span><span class="Normal">(</span><span class="Keyword">readonly</span><span class="PreProc"> name</span>:<span class="PreProc"> </span><span class="Type">string</span><span class="Operator">,</span><span class="PreProc"> </span><span class="Keyword">readonly</span><span class="PreProc"> color</span><span class="PreProc">?</span>:<span class="PreProc"> </span><span class="Type">string</span><span class="Normal">)</span> <span class="Function">{</span>
+  <span class="Function">}</span>
+<span class="Function">}</span>
+
+<span class="Comment">//</span>
+<span class="Comment">// Usage</span>
+<span class="Comment">//</span>
+
+<span class="Identifier">const</span> builder = <span class="Identifier">new</span> TokenBuilder<span class="Normal">()</span>;
+<span class="Identifier">const</span> visitor = <span class="Identifier">new</span> TokenVisitor<span class="Normal">()</span>;
+<span class="Identifier">const</span> parser = <span class="Identifier">new</span> Parser<span class="Normal">(</span>
+  builder,
+  visitor,
+  <span class="String">'The quick brown fox jumps over the lazy dog.'</span>
+<span class="Normal">)</span>;
+<span class="Identifier">const</span> animals = parser.parse<span class="Normal">()</span>;
+
+<span class="Structure">console</span>.<span class="Keyword">dir</span><span class="Normal">(</span>visitor.visited<span class="Normal">)</span>;
+<span class="Structure">console</span>.<span class="Keyword">dir</span><span class="Normal">(</span>visitor.accumulated<span class="Normal">)</span>;
+
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

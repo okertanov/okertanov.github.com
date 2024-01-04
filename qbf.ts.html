@@ -40,6 +40,18 @@ body { font-family: monospace; color: #d0d0d0; background-color: #121212; }
 <span class="Comment">  Create 'Parser' class that accepts a string like this and </span>
 <span class="Comment">  returns the instances of 'Animal' class  with the 'name' and</span>
 <span class="Comment">  optional 'color' properties if defined.</span>
+
+<span class="Comment">  
+<span class="Comment">  'The quick brown fox jumps over the lazy dog.'</span>
+<span class="Comment">  .split(/\W+/)</span>
+<span class="Comment">  .filter(Boolean)</span>
+<span class="Comment">  .reduce(</span>
+<span class="Comment">    (a, c, i, t) =></span>
+<span class="Comment">      ['dog','fox'].includes(c) ?</span>
+<span class="Comment">        (a.push({name: c, color: ['brown'].includes(t[i-1]) ? t[i-1] : undefined }), a) :</span>
+<span class="Comment">        a,</span>
+<span class="Comment">    []</span>
+<span class="Comment">  )</span>
 <span class="Comment">*/</span>
 
 <span class="Comment">//</span>
